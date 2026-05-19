@@ -84,6 +84,8 @@ const slides = [
    VARIABLES
 ========================================================= */
 
+const backgrounds = document.querySelectorAll('.slide-bg');
+
 let current = 0;
 
 let activeBg = 0;
@@ -128,25 +130,21 @@ if(
        MOSTRAR SLIDE
     ===================================================== */
 
-    function showSlide(index){
+   function showSlide(index){
 
-        /* CAMBIAR FONDO */
+    activeBg = activeBg === 0 ? 1 : 0;
 
-        activeBg = activeBg === 0 ? 1 : 0;
+    backgrounds[activeBg].style.backgroundImage =
+    `url('${slides[index].image}')`;
 
-        backgrounds[activeBg].style.backgroundImage =
-        `url('${slides[index].image}')`;
+    backgrounds.forEach(bg=>{
+        bg.classList.remove('active');
+    });
 
+    backgrounds[activeBg].classList.add('active');
+}
 
-
-        /* REMOVER ACTIVE */
-
-        backgrounds.forEach(bg => {
-
-            bg.classList.remove('active');
-
-        });
-
+showSlide(0);
 
 
         /* ACTIVAR */
@@ -313,7 +311,7 @@ if(
         }
     }
 
-}
+
 
 
 
