@@ -1,0 +1,932 @@
+/* =========================================================
+   EASYCREDIT - nosotros CSS
+========================================================= */
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+    color:#081F4D;
+    overflow-x:hidden;
+    line-height:1.6;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container{
+    width:90%;
+    max-width:1280px;
+    margin:auto;
+}
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar{
+    height:42px;
+    background:#081F4D;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 60px;
+    color:white;
+    font-size:14px;
+}
+
+.topbar span{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    width:100%;
+    height:95px;
+    position:sticky;
+    top:0;
+    z-index:999;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 70px;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(8,31,77,0.06);
+    box-shadow:0 10px 35px rgba(0,0,0,0.03);
+}
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:68px;
+    width:auto;
+}
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+
+.menu a{
+    position:relative;
+    text-decoration:none;
+    color:#081F4D;
+    font-size:17px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+.menu a::after{
+    content:'';
+    position:absolute;
+    left:50%;
+    bottom:-10px;
+    width:0%;
+    height:3px;
+    border-radius:20px;
+    background:linear-gradient(90deg,#00C853,#00E676);
+    transform:translateX(-50%);
+    transition:0.35s ease;
+}
+
+.menu a:hover{
+    color:#00C853;
+}
+
+.menu a:hover::after{
+    width:100%;
+}
+
+/* LINK ACTIVO */
+
+.menu a.active{
+
+    color:#00C853;
+}
+
+.menu a.active::after{
+
+    width:100%;
+}
+
+/* =========================================================
+   BOTON NAV
+========================================================= */
+
+.btn-nav{
+    padding:15px 30px;
+    border-radius:14px;
+    background:linear-gradient(135deg,#00C853,#00E676);
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:700;
+    box-shadow:0 12px 30px rgba(0,200,83,0.20);
+    transition:0.35s ease;
+}
+
+.btn-nav:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px rgba(0,200,83,0.28);
+}
+
+/* =========================================================
+   HERO PAGINA
+========================================================= */
+
+.page-hero{
+    height:55vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    rgba(8,31,77,.80),
+    rgba(8,31,77,.80)
+    ),
+    url('../img/nosotros.jpg');
+
+    background-size:cover;
+    background-position:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+}
+
+.page-hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    color:white;
+}
+
+.page-hero-content h1{
+    font-size:72px;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.page-hero-content p{
+    font-size:20px;
+    opacity:.92;
+    max-width:700px;
+}
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.page-content{
+    padding:120px 0;
+    background:#f8fafc;
+}
+
+.page-box{
+    background:white;
+    padding:70px;
+    border-radius:35px;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.page-box h2{
+    font-size:42px;
+    margin-bottom:25px;
+    color:#081F4D;
+}
+
+.page-box p{
+    font-size:17px;
+    line-height:1.9;
+    color:#64748b;
+}
+
+/* =========================================================
+   SERVICIOS GRID
+========================================================= */
+
+.services-grid{
+    margin-top:60px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.service-card{
+    background:#ffffff;
+    padding:40px 30px;
+    border-radius:28px;
+    border:1px solid #edf1f7;
+    box-shadow:0 15px 35px rgba(15,23,42,.06);
+    transition:.35s;
+}
+
+.service-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 55px rgba(15,23,42,.10);
+}
+
+.service-icon{
+    width:80px;
+    height:80px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#00C853,#00E676);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.service-icon i{
+    color:white;
+    font-size:30px;
+}
+
+.service-card h3{
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.service-card p{
+    color:#64748b;
+    line-height:1.8;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    background:#081F4D;
+    padding:90px 0 35px;
+    color:white;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:50px;
+}
+
+.footer-brand img{
+    height:70px;
+    width:auto;
+    margin-bottom:20px;
+}
+
+.footer-brand p{
+    color:rgba(255,255,255,.75);
+    line-height:1.8;
+}
+
+.footer h3{
+    color:#22C55E;
+    margin-bottom:22px;
+    font-size:28px;
+}
+
+.footer-info a{
+
+    color:rgba(255,255,255,.78);
+
+    text-decoration:none;
+
+    transition:.3s;
+}
+
+.footer-info a:hover{
+
+    color:#22C55E;
+}
+
+.footer-info p,
+.footer-links a{
+    color:rgba(255,255,255,.78);
+    text-decoration:none;
+    margin-bottom:14px;
+    display:block;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#22C55E;
+    transform:translateX(5px);
+}
+
+/* =========================================================
+   REDES
+========================================================= */
+
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#22C55E;
+    transform:translateY(-4px);
+}
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.footer-copy{
+    margin-top:70px;
+    padding-top:25px;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    color:rgba(255,255,255,.65);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
+    .navbar{
+        padding:0 25px;
+    }
+
+    .menu{
+        gap:25px;
+    }
+
+    .page-box{
+        padding:50px 35px;
+    }
+
+    .page-hero-content h1{
+        font-size:54px;
+    }
+}
+
+@media(max-width:768px){
+
+    .topbar{
+        display:none;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    .navbar{
+        padding:20px;
+    }
+
+    .btn-nav{
+        padding:12px 18px;
+        font-size:14px;
+    }
+
+    .page-hero{
+        height:45vh;
+    }
+
+    .page-hero-content h1{
+        font-size:42px;
+    }
+
+    .page-hero-content p{
+        font-size:18px;
+        padding:0 20px;
+    }
+
+    .page-box{
+        padding:40px 25px;
+    }
+
+    .page-box h2{
+        font-size:34px;
+    }
+
+    .footer{
+        text-align:center;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+}
+
+
+/* =========================================================
+   MISION - VISION - VALORES
+========================================================= */
+
+.mvv-section{
+    padding:140px 0;
+    background:#f8fafc;
+}
+
+/* TITULO */
+
+.mvv-title{
+    text-align:center;
+    margin-bottom:90px;
+}
+
+.mvv-title span{
+    color:#00C853;
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.mvv-title h2{
+    font-size:58px;
+    line-height:1.2;
+    margin:20px auto;
+    max-width:850px;
+    color:#081F4D;
+}
+
+.mvv-title p{
+    max-width:760px;
+    margin:auto;
+    color:#64748b;
+    line-height:1.9;
+    font-size:18px;
+}
+
+/* GRID */
+
+.mvv-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:40px;
+    margin-bottom:100px;
+}
+
+/* CARD */
+
+.mvv-card{
+    background:rgb(255, 255, 255);
+    padding:50px 40px;
+    border-radius:35px;
+    box-shadow:0 20px 50px rgba(15,23,42,.06);
+    border:1px solid #edf1f7;
+    transition:.4s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.mvv-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,#00C853,#00E676);
+}
+
+.mvv-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 30px 60px rgba(15,23,42,.10);
+}
+
+/* ICONOS */
+
+.mvv-icon{
+    width:90px;
+    height:90px;
+    border-radius:25px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:30px;
+    font-size:36px;
+    color:white;
+}
+
+.mvv-icon.green{
+    background:linear-gradient(135deg,#00C853,#00E676);
+}
+
+.mvv-icon.blue{
+    background:linear-gradient(135deg,#2196F3,#64B5F6);
+}
+
+/* TEXTOS */
+
+.mvv-card h3{
+    font-size:34px;
+    margin-bottom:20px;
+    color:#081F4D;
+}
+
+.mvv-card p{
+    color:#64748b;
+    line-height:2;
+    font-size:17px;
+}
+
+/* =========================================================
+   VALORES
+========================================================= */
+
+.valores-box{
+    background:white;
+    border-radius:40px;
+    padding:70px 50px;
+    box-shadow:0 25px 60px rgba(15,23,42,.06);
+}
+
+.valores-header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.valores-header span{
+    color:#00C853;
+    font-weight:700;
+    font-size:18px;
+}
+
+.valores-header h2{
+    font-size:52px;
+    margin-top:18px;
+    color:#081F4D;
+}
+
+/* GRID VALORES */
+
+.valores-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+/* ITEM */
+
+.valor-item{
+    background:#f8fafc;
+    border-radius:24px;
+    padding:30px 20px;
+    text-align:center;
+    transition:.35s ease;
+    border:1px solid #edf1f7;
+}
+
+.valor-item:hover{
+    transform:translateY(-8px);
+    background:white;
+    box-shadow:0 20px 40px rgba(15,23,42,.08);
+}
+
+/* ICONO */
+
+.valor-item i{
+    width:70px;
+    height:70px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#00C853,#00E676);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto auto 20px;
+    font-size:28px;
+}
+
+/* TEXTO */
+
+.valor-item span{
+    display:block;
+    font-size:18px;
+    font-weight:600;
+    color:#081F4D;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:768px){
+
+    .mvv-section{
+        padding:100px 0;
+    }
+
+    .mvv-title h2{
+        font-size:40px;
+    }
+
+    .mvv-card{
+        padding:40px 30px;
+    }
+
+    .mvv-card h3{
+        font-size:28px;
+    }
+
+    .valores-box{
+        padding:50px 25px;
+    }
+
+    .valores-header h2{
+        font-size:38px;
+    }
+}
+
+/* =========================================================
+   CENTRAR MISION Y VISION
+========================================================= */
+
+.mvv-card{
+    text-align:center;
+}
+
+/* ICONOS CENTRADOS */
+
+.mvv-icon{
+    margin:0 auto 30px;
+}
+
+/* TITULOS */
+
+.mvv-card h3{
+    text-align:center;
+}
+
+/* PARRAFOS */
+
+.mvv-card p{
+    text-align:center;
+}
+
+/* =========================================================
+   BOTON WHATSAPP
+========================================================= */
+
+.whatsapp{
+    position:fixed;
+    width:65px;
+    height:65px;
+    right:20px;
+    bottom:20px;
+    border-radius:50%;
+    background:#25D366;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-decoration:none;
+    z-index:999;
+    box-shadow:0 15px 35px rgba(37,211,102,.25);
+}
+
+.whatsapp i{
+    color:white;
+    font-size:34px;
+}
+
+
+/* =========================================================
+   MENU MOBILE PREMIUM
+========================================================= */
+
+.menu-toggle{
+
+    display:none;
+
+    position:absolute;
+
+    left:22px;
+
+    font-size:32px;
+
+    color:#081F4D;
+
+    cursor:pointer;
+
+    z-index:1001;
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+    /* TOPBAR */
+
+    .topbar{
+
+        display:none;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+
+        position:relative;
+
+        justify-content:center;
+
+        align-items:center;
+
+        padding:18px 22px;
+
+        height:auto;
+    }
+
+    /* LOGO CENTRADO */
+
+    .logo{
+
+        display:flex;
+
+        justify-content:center;
+
+        width:100%;
+    }
+
+    .logo img{
+
+        height:55px;
+
+        width:auto;
+    }
+
+    /* BOTON HAMBURGUESA */
+
+    .menu-toggle{
+
+        display:flex;
+
+        align-items:center;
+
+        justify-content:center;
+    }
+
+    /* MENU LATERAL */
+
+    .menu{
+
+        position:fixed;
+
+        top:0;
+
+        left:-100%;
+
+        width:280px;
+
+        height:100vh;
+
+        background:white;
+
+        display:flex;
+
+        flex-direction:column;
+
+        justify-content:center;
+
+        align-items:flex-start;
+
+        padding-left:40px;
+
+        gap:35px;
+
+        transition:.45s ease;
+
+        z-index:1000;
+
+        box-shadow:0 0 40px rgba(0,0,0,.15);
+    }
+
+    /* MENU ACTIVO */
+
+    .menu.active{
+
+        left:0;
+    }
+
+    /* LINKS */
+
+    .menu a{
+
+        font-size:24px;
+
+        font-weight:700;
+    }
+
+    /* BOTON NAV */
+
+    .btn-nav{
+
+        display:none;
+    }
+
+    /* HERO */
+
+    .page-hero{
+
+        height:45vh;
+    }
+
+    .page-hero-content h1{
+
+        font-size:42px;
+    }
+
+    .page-hero-content p{
+
+        font-size:18px;
+
+        padding:0 20px;
+    }
+
+    /* CONTENIDO */
+
+    .page-box{
+
+        padding:40px 25px;
+    }
+
+    .page-box h2{
+
+        font-size:34px;
+    }
+
+    /* TITULOS */
+
+    .services-title h2,
+    .future-box h2{
+
+        font-size:40px;
+    }
+
+    /* CARDS */
+
+    .service-card,
+    .future-item{
+
+        padding:35px 28px;
+    }
+
+    /* FOOTER */
+
+    .footer{
+
+        text-align:center;
+    }
+
+    .social-icons{
+
+        justify-content:center;
+    }
+}
