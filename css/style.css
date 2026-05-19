@@ -190,18 +190,6 @@ body{
     transition:opacity 1.2s ease;
 }
 
-.slide-bg:nth-child(1){
-    background-image:url('../img/slide1.jpg');
-}
-
-.slide-bg:nth-child(2){
-    background-image:url('../img/slide2.jpg');
-}
-
-.slide-bg:nth-child(3){
-    background-image:url('../img/slide3.jpg');
-}
-
 .slide-bg.active{
     opacity:1;
 }
