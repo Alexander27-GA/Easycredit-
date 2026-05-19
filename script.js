@@ -49,7 +49,7 @@ const slides = [
 
     button:'Solicitar asesoría',
 
-    link:'contacto.html'
+    link:'./html/contacto.html'
 },
 
 {
@@ -61,7 +61,7 @@ const slides = [
 
     button:'Conocer servicios',
 
-    link:'servicios.html'
+    link:'./html/servicios.html'
 },
 
 {
@@ -73,7 +73,7 @@ const slides = [
 
     button:'Contáctanos',
 
-    link:'contacto.html'
+    link:'./html/contacto.html'
 }
 
 ];
