@@ -1,3 +1,19 @@
+
+:root{
+
+    --black:#111111;
+    --dark:#1A1A1A;
+
+    --green:#1E8E1C;
+    --green-light:#39D10A;
+
+    --gray:#E5E5E5;
+    --gray-text:#666666;
+
+    --white:#ffffff;
+
+}
+
 /* =========================================================
    EASYCREDIT - ESTILO PROFESIONAL MODERNO
 ========================================================= */
@@ -19,7 +35,7 @@ html{
 body{
     font-family:'Poppins',sans-serif;
     background:#ffffff;
-    color:#081F4D;
+    color:var(--black);
     overflow-x:hidden;
     line-height:1.6;
 }
@@ -40,7 +56,7 @@ body{
 
 .topbar{
     height:42px;
-    background:#081F4D;
+    background:var(--black);
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -103,7 +119,7 @@ body{
 .menu a{
     position:relative;
     text-decoration:none;
-    color:#081F4D;
+    color:var(--black);
     font-size:17px;
     font-weight:600;
     letter-spacing:.3px;
@@ -118,7 +134,7 @@ body{
     width:0%;
     height:3px;
     border-radius:20px;
-    background:linear-gradient(90deg,#00C853,#00E676);
+    background:linear-gradient(90deg,var(--green),var(--green-light));
     transform:translateX(-50%);
     transition:.35s ease;
 }
@@ -133,7 +149,7 @@ body{
 }
 
 .menu a.active{
-    color:#00C853;
+    color:var(--green);
 }
 
 .menu a.active::after{
@@ -147,7 +163,7 @@ body{
 .btn-nav{
     padding:16px 32px;
     border-radius:14px;
-    background:linear-gradient(135deg,#00C853,#00E676);
+    background:linear-gradient(135deg,var(--green),var(--green-light));
     color:white;
     text-decoration:none;
     font-size:15px;
@@ -201,14 +217,15 @@ body{
 .overlay{
     position:absolute;
     inset:0;
+
     background:linear-gradient(
         to right,
-        rgba(8,31,77,.92),
-        rgba(8,31,77,.45)
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.45)
     );
+
     z-index:1;
 }
-
 /* =========================================================
    CONTENIDO HERO
 ========================================================= */
@@ -239,7 +256,7 @@ body{
     padding:18px 35px;
     border:none;
     border-radius:14px;
-    background:linear-gradient(135deg,#00C853,#00E676);
+    background:linear-gradient(135deg,var(--green),var(--green-light));
     color:white;
     font-size:16px;
     font-weight:700;
@@ -326,8 +343,8 @@ body{
 
     background:linear-gradient(
         135deg,
-        #00C853,
-        #00E676
+        var(--green),
+        var(--green-light)
     );
 
     transform:
@@ -362,7 +379,7 @@ section{
 
 .afianzamiento{
     padding:130px 0;
-    background:#f8fafc;
+    background:#f5f5f5;
 }
 
 .af-title{
@@ -378,7 +395,7 @@ section{
 }
 
 .af-title span{
-    color:#00C853;
+    color:var(--green);
 }
 
 .af-grid{
@@ -391,7 +408,7 @@ section{
     background:white;
     padding:45px 35px;
     border-radius:28px;
-    border:1px solid #edf1f7;
+    border:1px solid #e5e5e5;
     box-shadow:0 15px 35px rgba(15,23,42,.06);
     transition:.4s;
 }
@@ -405,7 +422,7 @@ section{
     width:80px;
     height:80px;
     border-radius:22px;
-    background:linear-gradient(135deg,#00C853,#00E676);
+    background:linear-gradient(135deg,var(--green),var(--green-light));
     display:flex;
     justify-content:center;
     align-items:center;
@@ -423,7 +440,7 @@ section{
 }
 
 .af-card p{
-    color:#64748b;
+    color:var(--gray-text);
     line-height:1.9;
 }
 
@@ -434,12 +451,12 @@ section{
 .afianzamos{
     padding:140px 0;
     background:
-        linear-gradient(
-            135deg,
-            rgba(8,31,77,.94),
-            rgba(8,31,77,.90)
-        ),
-        url('../img/afianzamos.png');
+linear-gradient(
+    135deg,
+    rgba(0,0,0,.92),
+    rgba(20,20,20,.92)
+),
+url('../img/afianzamos.png');
 
     background-size:cover;
     background-position:center;
@@ -454,7 +471,7 @@ section{
 }
 
 .afianzamos span{
-    color:#00E676;
+    color:var(--green-light);
 }
 
 .afianza-grid{
@@ -491,7 +508,7 @@ section{
 }
 
 .icon.green{
-    background:linear-gradient(135deg,#00C853,#00E676);
+    background:linear-gradient(135deg,var(--green),var(--green-light));
 }
 
 .icon.blue{
@@ -537,7 +554,7 @@ section{
 }
 
 .mini-title{
-    color:#00C853;
+    color:var(--green);
     font-size:22px;
     font-weight:700;
     margin-bottom:20px;
@@ -551,7 +568,7 @@ section{
 }
 
 .beneficios-content > p{
-    color:#64748b;
+    color:var(--gray-text);
     line-height:1.9;
     margin-bottom:40px;
 }
@@ -561,7 +578,7 @@ section{
     gap:22px;
     padding:28px;
     border-radius:24px;
-    border:1px solid #edf1f7;
+    border:1px solid #e5e5e5;
     margin-bottom:24px;
     box-shadow:0 10px 30px rgba(15,23,42,.05);
     transition:.35s;
@@ -575,7 +592,7 @@ section{
     min-width:65px;
     height:65px;
     border-radius:18px;
-    background:linear-gradient(135deg,#00C853,#00E676);
+    background:linear-gradient(135deg,var(--green),var(--green-light));
     color:white;
     display:flex;
     justify-content:center;
@@ -589,7 +606,7 @@ section{
 }
 
 .beneficio-item p{
-    color:#64748b;
+    color:var(--gray-text);
 }
 
 /* =========================================================
@@ -613,7 +630,11 @@ section{
 .stats{
     width:85%;
     margin:auto;
-    background:linear-gradient(135deg,#081F4D,#0E2D6D);
+    background:linear-gradient(
+    135deg,
+    #111111,
+    #2a2a2a
+);
     border-radius:35px;
     padding:80px 50px;
     display:flex;
@@ -648,7 +669,7 @@ section{
 
 .about{
     padding:140px 0;
-    background:#f8fafc;
+    background:#f5f5f5;
 }
 
 .about-container{
@@ -664,7 +685,7 @@ section{
 }
 
 .about-text span{
-    color:#00C853;
+    color:var(--green);
     font-size:24px;
     font-weight:700;
 }
@@ -675,7 +696,7 @@ section{
 }
 
 .about-text p{
-    color:#64748b;
+    color:var(--gray-text);
     line-height:2;
     margin-bottom:22px;
 }
@@ -685,7 +706,7 @@ section{
     padding:18px 36px;
     border:none;
     border-radius:14px;
-    background:linear-gradient(135deg,#00C853,#00E676);
+    background:linear-gradient(135deg,var(--green),var(--green-light));
     color:white;
     font-weight:600;
     cursor:pointer;
@@ -705,8 +726,8 @@ section{
     padding:140px 0;
     background:linear-gradient(
         180deg,
-        #f8fafc 50%,
-        #081F4D 50%
+        #f5f5f5 50%,
+        var(--black) 50%
     );
 }
 
@@ -753,7 +774,7 @@ section{
 }
 
 .cta-mini{
-    color:#00C853;
+    color:var(--green);
     font-size:18px;
     font-weight:700;
 }
@@ -765,7 +786,7 @@ section{
 }
 
 .cta-content > p{
-    color:#64748b;
+    color:var(--gray-text);
     line-height:1.9;
     margin-bottom:45px;
     font-size:17px;
@@ -783,7 +804,7 @@ section{
     gap:22px;
     padding:24px 28px;
     border-radius:24px;
-    background:#f8fafc;
+    background:#f5f5f5;
     text-decoration:none;
     transition:.4s ease;
     border:1px solid transparent;
@@ -810,7 +831,7 @@ section{
 }
 
 .cta-icon.green{
-    background:linear-gradient(135deg,#00C853,#00E676);
+    background:linear-gradient(135deg,var(--green),var(--green-light));
 }
 
 .cta-icon.blue{
@@ -823,12 +844,12 @@ section{
 
 .cta-item h3{
     font-size:24px;
-    color:#081F4D;
+    color:var(--black);
     margin-bottom:6px;
 }
 
 .cta-item p{
-    color:#64748b;
+    color:var(--gray-text);
     line-height:1.7;
 }
 
@@ -839,7 +860,7 @@ section{
     margin-top:45px;
     padding:18px 36px;
     border-radius:16px;
-    background:linear-gradient(135deg,#00C853,#00E676);
+    background:linear-gradient(135deg,var(--green),var(--green-light));
     color:white;
     text-decoration:none;
     font-size:16px;
@@ -858,7 +879,7 @@ section{
 ========================================================= */
 
 .footer{
-    background:#081F4D;
+    background:var(--black);
     padding:90px 0 35px;
     color:white;
 }
@@ -964,7 +985,7 @@ section{
 .menu-toggle{
     display:none;
     font-size:32px;
-    color:#081F4D;
+    color:var(--black);
     cursor:pointer;
     z-index:1001;
     position:absolute;
