@@ -442,7 +442,6 @@ const menu =
 document.querySelector(".menu");
 
 
-
 /* VALIDAR */
 
 if(toggle && menu){
@@ -454,7 +453,6 @@ if(toggle && menu){
         menu.classList.toggle("active");
 
     });
-
 
 
     /* CERRAR MENU */
@@ -473,6 +471,33 @@ if(toggle && menu){
     });
 
 }
+
+
+/* =========================================================
+   DROPDOWN MOBILE
+========================================================= */
+
+const dropdowns =
+document.querySelectorAll(".dropdown");
+
+dropdowns.forEach(dropdown => {
+
+    const button =
+    dropdown.querySelector("a");
+
+    button.addEventListener("click", function(e){
+
+        if(window.innerWidth <= 768){
+
+            e.preventDefault();
+
+            dropdown.classList.toggle("active");
+
+        }
+
+    });
+
+});
 
 
 
@@ -534,4 +559,10 @@ ${mensaje}`;
     })
 
 }
+
+
+
+
+
+
 

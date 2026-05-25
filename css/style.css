@@ -134,13 +134,17 @@ body{
     width:0%;
     height:3px;
     border-radius:20px;
-    background:linear-gradient(90deg,var(--green),var(--green-light));
+    background:linear-gradient(
+    90deg,
+    #1E8E1C,
+    #39D10A
+);
     transform:translateX(-50%);
     transition:.35s ease;
 }
 
 .menu a:hover{
-    color:#00A86B;
+    color:#1E8E1C;
     transform:translateY(-2px);
 }
 
@@ -149,7 +153,7 @@ body{
 }
 
 .menu a.active{
-    color:var(--green);
+    color:#1E8E1C;
 }
 
 .menu a.active::after{
@@ -758,8 +762,9 @@ url('../img/afianzamos.png');
     position:absolute;
     inset:0;
     background:linear-gradient(
-        rgba(8,31,77,.15),
-        rgba(8,31,77,.35)
+        to right,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.45)
     );
 }
 
@@ -1073,10 +1078,10 @@ url('../img/afianzamos.png');
 
     .overlay{
         background:linear-gradient(
-            to bottom,
-            rgba(8,31,77,.82),
-            rgba(8,31,77,.55)
-        );
+        to right,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.45)
+    );
     }
 
     .hero-content{
@@ -1163,5 +1168,345 @@ url('../img/afianzamos.png');
 
     .stat h2{
         font-size:52px;
+    }
+}
+
+/* =========================================================
+   DROPDOWN SERVICIOS PREMIUM
+========================================================= */
+
+.dropdown{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+}
+
+/* BOTON */
+
+.dropdown > a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+/* ICONO */
+
+.dropdown i{
+
+    font-size:12px;
+
+    transition:.3s ease;
+}
+
+/* ROTACION */
+
+.dropdown:hover i{
+
+    transform:rotate(180deg);
+}
+
+/* =========================================================
+   SUBMENU
+========================================================= */
+
+.submenu{
+
+    position:absolute;
+
+    top:150%;
+
+    left:50%;
+
+    transform:
+    translateX(-50%)
+    translateY(20px);
+
+    min-width:320px;
+
+    background:white;
+
+    border-radius:26px;
+
+    padding:18px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s ease;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.12);
+
+    border:1px solid rgba(0,200,83,.10);
+
+    z-index:999;
+}
+
+/* MOSTRAR */
+
+.dropdown:hover .submenu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+    translateX(-50%)
+    translateY(0);
+}
+
+/* LINKS */
+
+.submenu a{
+
+    display:flex;
+
+    align-items:center;
+
+    padding:16px 20px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    color:#000000;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s ease;
+
+    background:#ffffff;
+}
+
+/* HOVER */
+
+.submenu a:hover{
+
+    background:
+    linear-gradient(
+    135deg,
+    #00C853,
+    #00E676
+    );
+
+    color:#ffffff;
+
+    transform:translateX(5px);
+
+    box-shadow:
+    0 12px 25px rgba(0,200,83,.20);
+}
+
+/* QUITAR LINEA */
+
+.submenu a::after{
+
+    display:none !important;
+}
+
+/* =========================================================
+   MOBILE MENU PREMIUM
+========================================================= */
+
+@media(max-width:768px){
+
+    /* TOPBAR */
+
+    .topbar{
+        display:none;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+        position:relative;
+        justify-content:center;
+        align-items:center;
+        padding:18px 22px;
+        height:auto;
+    }
+
+    /* LOGO */
+
+    .logo{
+        display:flex;
+        justify-content:center;
+        width:100%;
+    }
+
+    .logo img{
+        height:55px;
+        width:auto;
+    }
+
+    /* BOTON HAMBURGUESA */
+
+    .menu-toggle{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        position:absolute;
+        left:22px;
+        top:50%;
+        transform:translateY(-50%);
+        font-size:30px;
+        cursor:pointer;
+        z-index:2000;
+    }
+
+    /* MENU LATERAL */
+
+    .menu{
+        position:fixed;
+        top:0;
+        left:-100%;
+        width:300px;
+        height:100vh;
+        background:white;
+
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        justify-content:flex-start;
+
+        padding:120px 30px 40px;
+
+        gap:8px;
+
+        transition:.4s ease;
+        z-index:1500;
+
+        overflow-y:auto;
+
+        box-shadow:0 0 40px rgba(0,0,0,.15);
+    }
+
+    /* MENU ACTIVO */
+
+    .menu.active{
+        left:0;
+    }
+
+    /* LINKS PRINCIPALES */
+
+    .menu > a,
+    .dropdown > a{
+
+        width:100%;
+
+        padding:16px 0;
+
+        font-size:22px;
+
+        font-weight:700;
+
+        color:#081F4D;
+
+        border-bottom:
+        1px solid rgba(0,0,0,.06);
+    }
+
+    /* DROPDOWN */
+
+    .dropdown{
+
+        width:100%;
+
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    /* SUBMENU */
+
+    .submenu{
+
+        position:relative;
+
+        top:0;
+        left:0;
+
+        opacity:1;
+        visibility:visible;
+
+        transform:none;
+
+        display:none;
+
+        width:100%;
+
+        min-width:100%;
+
+        margin-top:10px;
+
+        padding:10px;
+
+        border-radius:18px;
+
+        background:#f8fafc;
+
+        border:1px solid rgba(0,0,0,.05);
+
+        box-shadow:none;
+    }
+
+    /* SUBMENU ACTIVO */
+
+    .dropdown.active .submenu{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:6px;
+    }
+
+    /* LINKS SUBMENU */
+
+    .submenu a{
+
+        width:100%;
+
+        padding:14px 16px;
+
+        border-radius:14px;
+
+        color:#081F4D;
+
+        font-size:16px;
+
+        font-weight:600;
+
+        background:white;
+    }
+
+    .submenu a:hover{
+
+        background:#22C55E;
+
+        color:white;
+    }
+
+    /* BOTON NAV */
+
+    .btn-nav{
+        display:none;
     }
 }
