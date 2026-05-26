@@ -900,8 +900,8 @@ body{
     background:
     linear-gradient(
     135deg,
-    #00C853,
-    #00E676
+    var(--green),
+    var(--green-light)
     );
 
     color:#ffffff;

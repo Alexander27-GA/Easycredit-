@@ -1,0 +1,714 @@
+:root{
+
+    --black:#111111;
+    --dark:#1A1A1A;
+
+    --green:#1E8E1C;
+    --green-light:#39D10A;
+
+    --gray:#E5E5E5;
+    --gray-text:#666666;
+
+    --white:#ffffff;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f5f5;
+    color:var(--black);
+    overflow-x:hidden;
+    line-height:1.7;
+}
+
+.container{
+    width:90%;
+    max-width:1280px;
+    margin:auto;
+}
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar{
+    height:42px;
+    background:#0d0d0d;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 60px;
+    color:white;
+    font-size:14px;
+}
+
+.topbar span{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar{
+    width:100%;
+    height:95px;
+    position:sticky;
+    top:0;
+    z-index:999;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 70px;
+    background:rgba(255,255,255,.95);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.logo img{
+    height:68px;
+}
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:45px;
+}
+
+.menu a{
+    position:relative;
+    text-decoration:none;
+    color:var(--black);
+    font-size:16px;
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.menu a:hover,
+.menu a.active{
+    color:var(--green);
+}
+
+.menu a::after{
+    content:'';
+    position:absolute;
+    left:50%;
+    bottom:-10px;
+    width:0%;
+    height:3px;
+    border-radius:20px;
+    background:linear-gradient(
+    90deg,
+    var(--green),
+    var(--green-light)
+    );
+    transform:translateX(-50%);
+    transition:.35s;
+}
+
+.menu a:hover::after,
+.menu a.active::after{
+    width:100%;
+}
+
+/* =========================================================
+   DROPDOWN
+========================================================= */
+
+.dropdown{
+    position:relative;
+}
+
+.dropdown > a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+.dropdown i{
+    font-size:12px;
+}
+
+.submenu{
+    position:absolute;
+    top:150%;
+    left:50%;
+    transform:translateX(-50%);
+    min-width:280px;
+    background:white;
+    border-radius:24px;
+    padding:18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    opacity:0;
+    visibility:hidden;
+    transition:.35s ease;
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+}
+
+.dropdown:hover .submenu{
+    opacity:1;
+    visibility:visible;
+}
+
+.submenu a{
+    padding:14px 18px;
+    border-radius:14px;
+}
+
+.submenu a:hover{
+    background:linear-gradient(
+    135deg,
+    var(--green),
+    var(--green-light)
+    );
+    color:white;
+}
+
+.submenu a::after{
+    display:none;
+}
+
+/* =========================================================
+   BOTON NAV
+========================================================= */
+
+.btn-nav{
+    padding:15px 30px;
+    border-radius:14px;
+    background:linear-gradient(
+    135deg,
+    var(--green),
+    var(--green-light)
+    );
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    transition:.35s;
+    box-shadow:
+    0 15px 35px rgba(30,142,28,.20);
+}
+
+.btn-nav:hover{
+    transform:translateY(-4px);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.services-hero{
+    width:100%;
+    height:45vh;
+    min-height:360px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,.75),
+    rgba(0,0,0,.70)
+    ),
+    url('../img/servicios.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.services-hero-content{
+    color:white;
+    max-width:850px;
+    padding:0 20px;
+}
+
+.services-hero-content span{
+    color:var(--green-light);
+    font-weight:700;
+    font-size:18px;
+}
+
+.services-hero-content h1{
+    font-size:68px;
+    margin:20px 0;
+    line-height:1.1;
+}
+
+.services-hero-content p{
+    font-size:19px;
+    opacity:.9;
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.service-detail{
+    padding:120px 0;
+}
+
+/* =========================================================
+   INFO TOP
+========================================================= */
+
+.service-info.center{
+    text-align:center;
+    max-width:950px;
+    margin:auto auto 80px;
+}
+
+.mini-service{
+    color:var(--green);
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.service-info.center h2{
+    font-size:58px;
+    margin:22px 0;
+    line-height:1.2;
+}
+
+.service-info.center p{
+    font-size:18px;
+    color:var(--gray-text);
+    margin-bottom:20px;
+}
+
+/* =========================================================
+   CARDS NUEVO ESTILO
+========================================================= */
+
+.full-card{
+    position:relative;
+    background:white;
+    border-radius:32px;
+    padding:55px;
+    margin-bottom:40px;
+    overflow:hidden;
+
+    border:1px solid rgba(0,0,0,.05);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.06);
+}
+
+.full-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:7px;
+
+    background:linear-gradient(
+    90deg,
+    var(--green),
+    var(--green-light)
+    );
+}
+
+.full-card h3{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:45px;
+    color:var(--black);
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.service-description{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 45px;
+    color:var(--gray-text);
+    font-size:17px;
+    line-height:1.9;
+}
+
+/* =========================================================
+   SERVICE LIST
+========================================================= */
+
+.service-list{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+/* =========================================================
+   ITEMS
+========================================================= */
+
+.service-item{
+    position:relative;
+
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+
+    padding:28px;
+
+    border-radius:24px;
+
+    background:
+    linear-gradient(
+    135deg,
+    #ffffff,
+    #f7fff7
+    );
+
+    border:1px solid #dcfce7;
+
+    transition:.35s ease;
+}
+
+.service-item:hover{
+    transform:translateY(-8px);
+    box-shadow:
+    0 20px 40px rgba(30,142,28,.10);
+}
+
+.service-item i{
+    width:62px;
+    height:62px;
+    min-width:62px;
+
+    border-radius:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+    135deg,
+    var(--green),
+    var(--green-light)
+    );
+
+    color:white;
+    font-size:24px;
+
+    box-shadow:
+    0 12px 25px rgba(30,142,28,.20);
+}
+
+.service-item span{
+    font-size:16px;
+    font-weight:600;
+    color:#222;
+    line-height:1.8;
+}
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.service-btn-box{
+    display:flex;
+    justify-content:center;
+    margin-top:55px;
+}
+
+.service-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:18px 36px;
+
+    border-radius:18px;
+
+    background:linear-gradient(
+    135deg,
+    var(--green),
+    var(--green-light)
+    );
+
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:700;
+
+    transition:.35s ease;
+
+    box-shadow:
+    0 15px 35px rgba(30,142,28,.20);
+}
+
+.service-btn:hover{
+    transform:translateY(-5px);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    background:#0d0d0d;
+    padding:90px 0 35px;
+    color:white;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+    gap:50px;
+}
+
+.footer-brand img{
+    height:70px;
+    margin-bottom:20px;
+}
+
+.footer-brand p{
+    color:rgba(255,255,255,.72);
+}
+
+.footer h3{
+    color:#bbf7d0;
+    margin-bottom:20px;
+}
+
+.footer a,
+.footer p{
+    color:rgba(255,255,255,.72);
+    text-decoration:none;
+}
+
+.footer-links a{
+    display:block;
+    margin-bottom:12px;
+}
+
+.footer-links a:hover,
+.footer-info a:hover{
+    color:#bbf7d0;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:var(--green);
+    transform:translateY(-4px);
+}
+
+.footer-copy{
+    margin-top:70px;
+    padding-top:25px;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    color:rgba(255,255,255,.6);
+}
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp{
+    position:fixed;
+    width:65px;
+    height:65px;
+    right:20px;
+    bottom:20px;
+
+    border-radius:50%;
+
+    background:#25D366;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    z-index:999;
+
+    box-shadow:
+    0 15px 35px rgba(37,211,102,.25);
+}
+
+.whatsapp i{
+    color:white;
+    font-size:34px;
+}
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.menu-toggle{
+    display:none;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:992px){
+
+    .navbar{
+        padding:0 25px;
+    }
+
+    .menu{
+        gap:25px;
+    }
+
+    .services-hero-content h1{
+        font-size:54px;
+    }
+
+    .service-info.center h2{
+        font-size:44px;
+    }
+}
+
+@media(max-width:768px){
+
+    .topbar{
+        display:none;
+    }
+
+    .navbar{
+        justify-content:center;
+        padding:18px 20px;
+        height:auto;
+    }
+
+    .menu-toggle{
+        display:flex;
+        position:absolute;
+        left:20px;
+        font-size:30px;
+        cursor:pointer;
+    }
+
+    .logo img{
+        height:55px;
+    }
+
+    .menu{
+        position:fixed;
+        top:0;
+        left:-100%;
+
+        width:280px;
+        height:100vh;
+
+        background:white;
+
+        flex-direction:column;
+        justify-content:center;
+        align-items:flex-start;
+
+        padding-left:40px;
+
+        transition:.4s ease;
+
+        z-index:1000;
+    }
+
+    .menu.active{
+        left:0;
+    }
+
+    .submenu{
+        display:none;
+    }
+
+    .btn-nav{
+        display:none;
+    }
+
+    .services-hero{
+        min-height:380px;
+    }
+
+    .services-hero-content h1{
+        font-size:42px;
+    }
+
+    .services-hero-content p{
+        font-size:16px;
+    }
+
+    .service-detail{
+        padding:90px 0;
+    }
+
+    .service-info.center h2{
+        font-size:38px;
+    }
+
+    .full-card{
+        padding:35px 25px;
+    }
+
+    .full-card h3{
+        font-size:28px;
+    }
+
+    .service-list{
+        grid-template-columns:1fr;
+    }
+
+    .service-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .footer{
+        text-align:center;
+    }
+
+    .social-icons{
+        justify-content:center;
+    }
+}
