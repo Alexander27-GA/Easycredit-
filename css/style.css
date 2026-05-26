@@ -975,7 +975,7 @@ url('../img/afianzamos.png');
 }
 
 .footer h3{
-    color:#22C55E;
+    color:var(--green-light);
     margin-bottom:22px;
     font-size:28px;
 }
@@ -988,7 +988,7 @@ url('../img/afianzamos.png');
 
 .footer-info a:hover,
 .footer-links a:hover{
-    color:#22C55E;
+    color:var(--green-light);
 }
 
 .footer-info p,
@@ -1017,7 +1017,7 @@ url('../img/afianzamos.png');
 }
 
 .social-icons a:hover{
-    background:#22C55E;
+    background:#09d353;
 }
 
 .footer-copy{
@@ -1054,270 +1054,84 @@ url('../img/afianzamos.png');
 }
 
 /* =========================================================
-   MENU MOBILE
+   DROPDOWN + MENU MOBILE CORREGIDO
+========================================================= */
+
+/* =========================================================
+   HAMBURGUESA
 ========================================================= */
 
 .menu-toggle{
-    display:none;
+    display:none !important;
     font-size:32px;
     color:var(--black);
     cursor:pointer;
-    z-index:1001;
+    z-index:2000;
     position:absolute;
     left:22px;
+    top:50%;
+    transform:translateY(-50%);
 }
 
 /* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:992px){
-
-    .cta-box{
-        flex-direction:column;
-    }
-
-    .cta-content{
-        padding:60px 40px;
-    }
-
-    .cta-content h2{
-        font-size:46px;
-    }
-}
-
-@media(max-width:768px){
-
-    .topbar{
-        display:none;
-    }
-
-    .navbar{
-        position:relative;
-        padding:18px 22px;
-        justify-content:center;
-        align-items:center;
-        height:auto;
-    }
-
-    .logo img{
-        height:58px;
-    }
-
-    .menu-toggle{
-        display:flex;
-    }
-
-    .menu{
-        position:fixed;
-        top:0;
-        left:-100%;
-        width:280px;
-        height:100vh;
-        background:white;
-        flex-direction:column;
-        justify-content:center;
-        align-items:flex-start;
-        padding-left:40px;
-        gap:35px;
-        transition:.45s ease;
-        z-index:1000;
-        box-shadow:0 0 40px rgba(0,0,0,.15);
-    }
-
-    .menu.active{
-        left:0;
-    }
-
-    .menu a{
-        font-size:24px;
-        font-weight:700;
-    }
-
-    .btn-nav{
-        display:none;
-    }
-
-    /* HERO */
-
-    .hero{
-        height:85vh;
-        min-height:650px;
-        touch-action:pan-y;
-    }
-
-    .overlay{
-        background:linear-gradient(
-        to right,
-        rgba(0,0,0,.88),
-        rgba(0,0,0,.45)
-    );
-    }
-
-    .hero-content{
-        width:100%;
-        max-width:100%;
-        padding:0 25px;
-        text-align:center;
-
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-    }
-
-    .hero h1{
-        font-size:38px;
-        line-height:1.2;
-        margin-bottom:20px;
-    }
-
-    .hero p{
-        font-size:17px;
-        line-height:1.8;
-        margin-bottom:30px;
-    }
-
-    .hero button{
-        width:100%;
-        max-width:280px;
-        padding:16px 20px;
-        font-size:16px;
-        border-radius:14px;
-    }
-
-    .slider-controls{
-        display:none;
-    }
-
-    /* TITULOS */
-
-    .af-title h2,
-    .afianzamos h2,
-    .beneficios-content h2,
-    .stats-title h2,
-    .about-text h2,
-    .cta-content h2{
-        font-size:38px;
-    }
-
-    /* CTA */
-
-    .cta-final{
-        padding:90px 0;
-    }
-
-    .cta-content{
-        padding:45px 25px;
-    }
-
-    .cta-item{
-        padding:20px;
-    }
-
-    .cta-icon{
-        width:65px;
-        height:65px;
-        font-size:24px;
-    }
-
-    .cta-item h3{
-        font-size:21px;
-    }
-
-    .cta-btn{
-        width:100%;
-    }
-
-    /* STATS */
-
-    .stats{
-        width:100%;
-        padding:50px 25px;
-    }
-
-    .stat h2{
-        font-size:52px;
-    }
-}
-
-/* =========================================================
-   DROPDOWN SERVICIOS PREMIUM
+   DROPDOWN SERVICIOS
 ========================================================= */
 
 .dropdown{
-
     position:relative;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 }
 
 /* BOTON */
 
 .dropdown > a{
-
     display:flex;
-
     align-items:center;
-
     gap:8px;
 }
 
 /* ICONO */
 
 .dropdown i{
-
     font-size:12px;
-
     transition:.3s ease;
 }
 
-/* ROTACION */
+/* ROTAR ICONO */
 
-.dropdown:hover i{
-
+.dropdown:hover i,
+.dropdown.active i{
     transform:rotate(180deg);
 }
 
 /* =========================================================
-   SUBMENU
+   SUBMENU DESKTOP
 ========================================================= */
 
 .submenu{
-
     position:absolute;
-
     top:150%;
-
     left:50%;
-
-    transform:
-    translateX(-50%)
-    translateY(20px);
+    transform:translateX(-50%);
 
     min-width:320px;
 
     background:white;
-
     border-radius:26px;
-
     padding:18px;
 
     display:flex;
-
     flex-direction:column;
-
     gap:10px;
 
     opacity:0;
-
     visibility:hidden;
 
-    transition:.35s ease;
+    transition:
+    opacity .25s ease,
+    visibility .25s ease;
 
     box-shadow:
     0 25px 60px rgba(0,0,0,.12);
@@ -1330,22 +1144,14 @@ url('../img/afianzamos.png');
 /* MOSTRAR */
 
 .dropdown:hover .submenu{
-
     opacity:1;
-
     visibility:visible;
-
-    transform:
-    translateX(-50%)
-    translateY(0);
 }
 
-/* LINKS */
+/* LINKS SUBMENU */
 
 .submenu a{
-
     display:flex;
-
     align-items:center;
 
     padding:16px 20px;
@@ -1360,15 +1166,16 @@ url('../img/afianzamos.png');
 
     font-weight:600;
 
-    transition:.3s ease;
-
     background:#ffffff;
+
+    transition:
+    background .25s ease,
+    color .25s ease;
 }
 
 /* HOVER */
 
 .submenu a:hover{
-
     background:
     linear-gradient(
     135deg,
@@ -1378,21 +1185,18 @@ url('../img/afianzamos.png');
 
     color:#ffffff;
 
-    transform:translateX(5px);
-
-    box-shadow:
-    0 12px 25px rgba(0,200,83,.20);
+    transform:none !important;
+    box-shadow:none !important;
 }
 
 /* QUITAR LINEA */
 
 .submenu a::after{
-
     display:none !important;
 }
 
 /* =========================================================
-   MOBILE MENU PREMIUM
+   MOBILE
 ========================================================= */
 
 @media(max-width:768px){
@@ -1426,29 +1230,25 @@ url('../img/afianzamos.png');
         width:auto;
     }
 
-    /* BOTON HAMBURGUESA */
+    /* HAMBURGUESA */
 
     .menu-toggle{
-        display:flex;
+        display:flex !important;
         align-items:center;
         justify-content:center;
-        position:absolute;
-        left:22px;
-        top:50%;
-        transform:translateY(-50%);
-        font-size:30px;
-        cursor:pointer;
-        z-index:2000;
     }
 
-    /* MENU LATERAL */
+    /* MENU */
 
     .menu{
         position:fixed;
+
         top:0;
         left:-100%;
+
         width:300px;
         height:100vh;
+
         background:white;
 
         display:flex;
@@ -1460,7 +1260,8 @@ url('../img/afianzamos.png');
 
         gap:8px;
 
-        transition:.4s ease;
+        transition:left .35s ease;
+
         z-index:1500;
 
         overflow-y:auto;
@@ -1468,13 +1269,11 @@ url('../img/afianzamos.png');
         box-shadow:0 0 40px rgba(0,0,0,.15);
     }
 
-    /* MENU ACTIVO */
-
     .menu.active{
         left:0;
     }
 
-    /* LINKS PRINCIPALES */
+    /* LINKS */
 
     .menu > a,
     .dropdown > a{
@@ -1484,19 +1283,33 @@ url('../img/afianzamos.png');
         padding:16px 0;
 
         font-size:22px;
-
         font-weight:700;
 
-        color:#081F4D;
+        color:#000000;
 
         border-bottom:
         1px solid rgba(0,0,0,.06);
+
+        transform:none !important;
+        transition:none !important;
+    }
+
+    /* ELIMINAR ANIMACIONES */
+
+    .menu a:hover,
+    .dropdown > a:hover,
+    .submenu a:hover{
+        transform:none !important;
+        box-shadow:none !important;
+    }
+
+    .menu a::after{
+        display:none !important;
     }
 
     /* DROPDOWN */
 
     .dropdown{
-
         width:100%;
 
         display:flex;
@@ -1504,24 +1317,22 @@ url('../img/afianzamos.png');
         align-items:flex-start;
     }
 
-    /* SUBMENU */
+    /* SUBMENU MOBILE */
 
     .submenu{
-
         position:relative;
 
         top:0;
         left:0;
 
+        transform:none !important;
+
         opacity:1;
         visibility:visible;
-
-        transform:none;
 
         display:none;
 
         width:100%;
-
         min-width:100%;
 
         margin-top:10px;
@@ -1537,40 +1348,36 @@ url('../img/afianzamos.png');
         box-shadow:none;
     }
 
-    /* SUBMENU ACTIVO */
-
     .dropdown.active .submenu{
-
         display:flex;
-
         flex-direction:column;
-
         gap:6px;
     }
 
     /* LINKS SUBMENU */
 
     .submenu a{
-
         width:100%;
 
         padding:14px 16px;
 
         border-radius:14px;
 
-        color:#081F4D;
+        color:#000000;
 
         font-size:16px;
 
         font-weight:600;
 
         background:white;
+
+        transition:
+        background .2s ease,
+        color .2s ease;
     }
 
     .submenu a:hover{
-
         background:#22C55E;
-
         color:white;
     }
 
@@ -1578,5 +1385,31 @@ url('../img/afianzamos.png');
 
     .btn-nav{
         display:none;
+    }
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media(min-width:769px){
+
+    .menu-toggle{
+        display:none !important;
+    }
+
+    .menu{
+        position:static;
+        width:auto;
+        height:auto;
+        background:none;
+        box-shadow:none;
+        padding:0;
+
+        flex-direction:row;
+        align-items:center;
+        justify-content:center;
+
+        gap:50px;
     }
 }

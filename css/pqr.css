@@ -764,35 +764,160 @@ body{
 }
 
 /* =========================================================
-   MOBILE MENU
+   DROPDOWN + MENU MOBILE CORREGIDO
+========================================================= */
+
+/* =========================================================
+   HAMBURGUESA
 ========================================================= */
 
 .menu-toggle{
-
-    display:none;
-
-    position:absolute;
-
-    left:22px;
-
+    display:none !important;
     font-size:32px;
-
     color:var(--black);
-
     cursor:pointer;
-
-    z-index:1001;
+    z-index:2000;
+    position:absolute;
+    left:22px;
+    top:50%;
+    transform:translateY(-50%);
 }
 
 /* =========================================================
-   RESPONSIVE
+   DROPDOWN SERVICIOS
+========================================================= */
+
+.dropdown{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* BOTON */
+
+.dropdown > a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+
+/* ICONO */
+
+.dropdown i{
+    font-size:12px;
+    transition:.3s ease;
+}
+
+/* ROTAR ICONO */
+
+.dropdown:hover i,
+.dropdown.active i{
+    transform:rotate(180deg);
+}
+
+/* =========================================================
+   SUBMENU DESKTOP
+========================================================= */
+
+.submenu{
+    position:absolute;
+    top:150%;
+    left:50%;
+    transform:translateX(-50%);
+
+    min-width:320px;
+
+    background:white;
+    border-radius:26px;
+    padding:18px;
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+    opacity .25s ease,
+    visibility .25s ease;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.12);
+
+    border:1px solid rgba(0,200,83,.10);
+
+    z-index:999;
+}
+
+/* MOSTRAR */
+
+.dropdown:hover .submenu{
+    opacity:1;
+    visibility:visible;
+}
+
+/* LINKS SUBMENU */
+
+.submenu a{
+    display:flex;
+    align-items:center;
+
+    padding:16px 20px;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    color:#000000;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    background:#ffffff;
+
+    transition:
+    background .25s ease,
+    color .25s ease;
+}
+
+/* HOVER */
+
+.submenu a:hover{
+    background:
+    linear-gradient(
+    135deg,
+    #00C853,
+    #00E676
+    );
+
+    color:#ffffff;
+
+    transform:none !important;
+    box-shadow:none !important;
+}
+
+/* QUITAR LINEA */
+
+.submenu a::after{
+    display:none !important;
+}
+
+/* =========================================================
+   MOBILE
 ========================================================= */
 
 @media(max-width:768px){
 
+    /* TOPBAR */
+
     .topbar{
         display:none;
     }
+
+    /* NAVBAR */
 
     .navbar{
         position:relative;
@@ -802,103 +927,199 @@ body{
         height:auto;
     }
 
+    /* LOGO */
+
     .logo{
-        width:100%;
         display:flex;
         justify-content:center;
+        width:100%;
     }
 
     .logo img{
         height:55px;
+        width:auto;
     }
 
+    /* HAMBURGUESA */
+
     .menu-toggle{
-        display:flex;
+        display:flex !important;
         align-items:center;
         justify-content:center;
     }
 
-    .menu{
+    /* MENU */
 
+    .menu{
         position:fixed;
 
         top:0;
-
         left:-100%;
 
         width:300px;
-
         height:100vh;
 
         background:white;
 
         display:flex;
-
         flex-direction:column;
-
+        align-items:flex-start;
         justify-content:flex-start;
 
-        align-items:flex-start;
+        padding:120px 30px 40px;
 
-        padding:120px 35px;
+        gap:8px;
 
-        gap:25px;
+        transition:left .35s ease;
 
-        transition:.45s ease;
+        z-index:1500;
 
-        z-index:1000;
+        overflow-y:auto;
 
-        box-shadow:
-        0 0 40px rgba(0,0,0,.15);
+        box-shadow:0 0 40px rgba(0,0,0,.15);
     }
 
     .menu.active{
         left:0;
     }
 
-    .menu a{
+    /* LINKS */
+
+    .menu > a,
+    .dropdown > a{
+
+        width:100%;
+
+        padding:16px 0;
+
         font-size:22px;
+        font-weight:700;
+
+        color:#000000;
+
+        border-bottom:
+        1px solid rgba(0,0,0,.06);
+
+        transform:none !important;
+        transition:none !important;
     }
 
-    .submenu{
+    /* ELIMINAR ANIMACIONES */
+
+    .menu a:hover,
+    .dropdown > a:hover,
+    .submenu a:hover{
+        transform:none !important;
+        box-shadow:none !important;
+    }
+
+    .menu a::after{
         display:none !important;
     }
+
+    /* DROPDOWN */
+
+    .dropdown{
+        width:100%;
+
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    /* SUBMENU MOBILE */
+
+    .submenu{
+        position:relative;
+
+        top:0;
+        left:0;
+
+        transform:none !important;
+
+        opacity:1;
+        visibility:visible;
+
+        display:none;
+
+        width:100%;
+        min-width:100%;
+
+        margin-top:10px;
+
+        padding:10px;
+
+        border-radius:18px;
+
+        background:#f8fafc;
+
+        border:1px solid rgba(0,0,0,.05);
+
+        box-shadow:none;
+    }
+
+    .dropdown.active .submenu{
+        display:flex;
+        flex-direction:column;
+        gap:6px;
+    }
+
+    /* LINKS SUBMENU */
+
+    .submenu a{
+        width:100%;
+
+        padding:14px 16px;
+
+        border-radius:14px;
+
+        color:#000000;
+
+        font-size:16px;
+
+        font-weight:600;
+
+        background:white;
+
+        transition:
+        background .2s ease,
+        color .2s ease;
+    }
+
+    .submenu a:hover{
+        background:#22C55E;
+        color:white;
+    }
+
+    /* BOTON NAV */
 
     .btn-nav{
         display:none;
     }
+}
 
-    .pqr-hero{
-        height:38vh;
-        min-height:260px;
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media(min-width:769px){
+
+    .menu-toggle{
+        display:none !important;
     }
 
-    .pqr-hero-content h1{
-        font-size:46px;
-    }
+    .menu{
+        position:static;
+        width:auto;
+        height:auto;
+        background:none;
+        box-shadow:none;
+        padding:0;
 
-    .pqr-hero-content p{
-        font-size:16px;
-    }
-
-    .pqr-box{
-        padding:35px 22px;
-        border-radius:25px;
-    }
-
-    .form-title h2{
-        font-size:30px;
-    }
-
-    .form-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer{
-        text-align:center;
-    }
-
-    .social-icons{
+        flex-direction:row;
+        align-items:center;
         justify-content:center;
+
+        gap:50px;
     }
 }

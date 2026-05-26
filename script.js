@@ -441,12 +441,9 @@ document.querySelector(".menu-toggle");
 const menu =
 document.querySelector(".menu");
 
-
-/* VALIDAR */
+/* ABRIR / CERRAR MENU */
 
 if(toggle && menu){
-
-    /* ABRIR MENU */
 
     toggle.addEventListener("click", () => {
 
@@ -454,24 +451,7 @@ if(toggle && menu){
 
     });
 
-
-    /* CERRAR MENU */
-
-    const links =
-    document.querySelectorAll(".menu a");
-
-    links.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            menu.classList.remove("active");
-
-        });
-
-    });
-
 }
-
 
 /* =========================================================
    DROPDOWN MOBILE
@@ -499,6 +479,37 @@ dropdowns.forEach(dropdown => {
 
 });
 
+/* =========================================================
+   CERRAR MENU SOLO EN LINKS FINALES
+========================================================= */
+
+const submenuLinks =
+document.querySelectorAll(".submenu a");
+
+submenuLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menu.classList.remove("active");
+
+    });
+
+});
+
+/* LINKS NORMALES */
+
+const normalLinks =
+document.querySelectorAll(".menu > a");
+
+normalLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        menu.classList.remove("active");
+
+    });
+
+});
 
 
 /* =========================================================
