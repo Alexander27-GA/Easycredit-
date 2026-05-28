@@ -251,7 +251,7 @@ if(
        AUTO PLAY
     ===================================================== */
 
-    setInterval(nextSlide,7000);
+    setInterval(nextSlide,9000);
 
 
 
