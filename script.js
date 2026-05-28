@@ -32,6 +32,9 @@ document.querySelector('.prev');
 const backgrounds =
 document.querySelectorAll('.slide-bg');
 
+const dots =
+document.querySelectorAll('.dot');
+
 
 /* =========================================================
    INFORMACION DE SLIDES
@@ -152,6 +155,17 @@ if(
 
         backgrounds[activeBg]
         .classList.add('active');
+
+
+        /* DOTS */
+
+dots.forEach(dot => {
+
+    dot.classList.remove('active');
+
+});
+
+dots[index].classList.add('active');
 
 
 
