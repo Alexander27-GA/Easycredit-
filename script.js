@@ -33,7 +33,6 @@ const backgrounds =
 document.querySelectorAll('.slide-bg');
 
 
-
 /* =========================================================
    INFORMACION DE SLIDES
 ========================================================= */
@@ -41,7 +40,7 @@ document.querySelectorAll('.slide-bg');
 const slides = [
 
 {
-    image:'/img/slide1.jpg',
+    image:'./img/slide1.jpg',
 
     title:'Soluciones Financieras para tu Empresa',
 
@@ -53,7 +52,7 @@ const slides = [
 },
 
 {
-    image:'/img/slide2.jpg',
+    image:'./img/slide2.jpg',
 
     title:'Recuperación de Cartera Efectiva',
 
@@ -65,7 +64,7 @@ const slides = [
 },
 
 {
-    image:'/img/slide3.jpg',
+    image:'./img/slide3.jpg',
 
     title:'Asesoría Contable y Financiera',
 
@@ -77,7 +76,6 @@ const slides = [
 }
 
 ];
-
 
 
 /* =========================================================
