@@ -43,7 +43,7 @@ document.querySelectorAll('.dot');
 const slides = [
 
 {
-    image:'./img/slide1.jpg',
+    image:'./img/slide1.webp',
 
     title:'Soluciones Financieras para tu Empresa',
 
@@ -55,7 +55,7 @@ const slides = [
 },
 
 {
-    image:'./img/slide2.jpg',
+    image:'./img/slide2.webp',
 
     title:'Recuperación de Cartera Efectiva',
 
@@ -67,7 +67,7 @@ const slides = [
 },
 
 {
-    image:'./img/slide3.jpg',
+    image:'./img/slide3.webp',
 
     title:'Asesoría Contable y Financiera',
 
