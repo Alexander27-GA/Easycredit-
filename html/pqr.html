@@ -3,10 +3,18 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PQR | EasyCredit</title>
 
-<title>PQR - EasyCredit</title>
+<meta name="description" content="Radique peticiones, quejas, reclamos, sugerencias o felicitaciones a través del formulario PQR de EasyCredit.">
+
+<meta name="keywords" content="PQR EasyCredit, peticiones, quejas, reclamos, sugerencias, atención al cliente">
+
+<meta name="author" content="EasyCredit">
+
+<meta name="robots" content="index, follow">
+<meta property="og:site_name" content="EasyCredit">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
 
 <link rel="stylesheet" href="../css/pqr.css">
 
@@ -178,7 +186,7 @@ rel="stylesheet">
 </section>
 
 <!-- =========================================================
-     PQR SECTION
+     SECCION PQR
 ========================================================= -->
 
 <section class="pqr-section">
@@ -187,197 +195,321 @@ rel="stylesheet">
 
         <div class="pqr-box">
 
-            <form class="pqr-form">
+            <form class="pqr-form" id="pqrForm">
 
-                <!-- TITULO -->
+                <!-- INFORMACIÓN BÁSICA -->
 
                 <div class="form-title">
-
                     <h2>Información básica de contacto</h2>
-
                 </div>
 
-                <!-- GRID -->
-
-                <div class="form-grid">
-
-                    <div class="input-group">
-
-                        <label>Fecha de ingreso</label>
-
-                        <input type="date">
-
-                    </div>
-
-                    <div class="input-group">
-
-                        <label>Tipo de documento</label>
-
-                        <select>
-
-                            <option>Seleccione</option>
-                            <option>Cédula</option>
-                            <option>NIT</option>
-                            <option>Pasaporte</option>
-
-                        </select>
-
-                    </div>
-
-                    <div class="input-group">
-
-                        <label>No. Documento</label>
-
-                        <input type="text"
-                        placeholder="Número de documento">
-
-                    </div>
-
-                    <div class="input-group">
-
-                        <label>Nombres</label>
-
-                        <input type="text"
-                        placeholder="Nombres">
-
-                    </div>
-
-                    <div class="input-group">
-
-                        <label>Apellidos</label>
-
-                        <input type="text"
-                        placeholder="Apellidos">
-
-                    </div>
-
-                    <div class="input-group">
-
-                        <label>Correo electrónico</label>
-
-                        <input type="email"
-                        placeholder="Correo electrónico">
-
-                    </div>
-
-                    <div class="input-group">
-
-                        <label>Departamento</label>
-
-                        <select>
-
-                            <option>Seleccione</option>
-
-                        </select>
-
-                    </div>
-
-                    <div class="input-group">
-
-                        <label>Ciudad</label>
-
-                        <select>
-
-                            <option>Seleccione</option>
-
-                        </select>
-
-                    </div>
-
-                    <div class="input-group full">
-
-                        <label>Dirección de correspondencia</label>
-
-                        <input type="text"
-                        placeholder="Dirección">
-
-                    </div>
-
-                </div>
-
-                <!-- ASUNTOS -->
-
-                <div class="form-title second">
-
-                    <h2>Listado de asuntos</h2>
-
-                </div>
-
-                <div class="form-grid">
-
-                    <div class="input-group">
-
-                        <label>Tipo de solicitud</label>
-
-                        <select>
-
-                            <option>Seleccione</option>
-                            <option>Solicitud / Petición</option>
-                            <option>Queja / Reclamo</option>
-                            <option>Felicitación</option>
-
-                        </select>
-
-                    </div>
-
-                    <div class="input-group">
-
-                        <label>Área relacionada</label>
-
-                        <select>
-
-                            <option>Seleccione</option>
-                            <option>Cartera</option>
-                            <option>Crédito</option>
-                            <option>Atención al cliente</option>
-
-                        </select>
-
-                    </div>
-
-                </div>
-
-                <!-- MENSAJE -->
-
-                <div class="input-group textarea-group">
-
-                    <label>Mensaje</label>
-
-                    <textarea
-                    placeholder="Escriba aquí su mensaje"></textarea>
-
-                </div>
-
-                <!-- ARCHIVO -->
-
-                <div class="upload-box">
-
-                    <label class="upload-btn">
-
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
-
-                        Subir archivo
-
-                        <input type="file" hidden>
-
-                    </label>
-
-                </div>
-
-                <!-- BOTON -->
-
-                <button type="submit"
-                class="pqr-btn">
-
-                    Enviar solicitud
-
-                </button>
-
-            </form>
-
+                <!-- TODO TU FORMULARIO AQUÍ -->
+
+        <input type="hidden" id="radicado" name="radicado">
+
+    <div class="form-grid">
+
+        <div class="input-group">
+            <label>Fecha de ingreso *</label>
+            <input
+            type="date"
+            id="fecha"
+            name="fecha"
+            required>
+        </div>
+
+        <div class="input-group">
+            <label>Tipo de documento *</label>
+            <select
+            id="tipoDocumento"
+            name="tipoDocumento"
+            required>
+
+                <option value="">
+                    Seleccione
+                </option>
+
+                <option>Cédula de ciudadanía</option>
+                <option>Cédula de extranjería</option>
+                <option>NIT</option>
+                <option>Pasaporte</option>
+
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>No. Documento *</label>
+            <input
+            type="text"
+            id="documento"
+            name="documento"
+            placeholder="Número de documento"
+            required
+            maxlength="15"
+            pattern="[0-9]+"
+            title="Ingrese únicamente números">
+        </div>
+
+        <div class="input-group">
+            <label>Nombres *</label>
+            <input
+            type="text"
+            id="nombres"
+            name="nombres"
+            required
+            maxlength="80"
+            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+            title="Ingrese únicamente letras">
+        </div>
+
+        <div class="input-group">
+            <label>Apellidos *</label>
+            <input
+            type="text"
+            id="apellidos"
+            name="apellidos"
+            required
+            maxlength="80"
+            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+            title="Ingrese únicamente letras">
+        </div>
+
+        <div class="input-group">
+            <label>Correo electrónico *</label>
+            <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="Correo electrónico"
+            required>
+        </div>
+
+        <div class="input-group">
+            <label>Teléfono celular *</label>
+           <input
+           type="tel"
+           id="telefono"
+           name="telefono"
+           required
+           maxlength="10"
+           pattern="3[0-9]{9}"
+           title="Ingrese un número celular válido">
+        </div>
+
+       <div class="input-group">
+    <label>Departamento *</label>
+    <select id="departamento" name="departamento" required>
+        <option value="">Seleccione un departamento</option>
+    </select>
+</div>
+
+     <div class="input-group">
+    <label>Ciudad *</label>
+    <select id="ciudad" name="ciudad" required>
+        <option value="">Seleccione una ciudad</option>
+    </select>
+</div>
+
+        <div class="input-group full">
+            <label>Dirección de correspondencia *</label>
+            <input
+            type="text"
+            id="direccion"
+            name="direccion"
+            required
+            maxlength="150"
+            minlength="5">
         </div>
 
     </div>
+
+    <!-- ASUNTOS -->
+
+    <div class="form-title second">
+        <h2>Listado de asuntos</h2>
+    </div>
+
+    <div class="form-grid">
+
+        <div class="input-group">
+            <label>Elija el asunto al que corresponde su contacto *</label>
+
+            <select
+            id="tipoSolicitud"
+            name="tipoSolicitud"
+            required>
+
+                <option value="">
+                    Seleccione
+                </option>
+
+                <option>Petición</option>
+                <option>Queja</option>
+                <option>Reclamo</option>
+                <option>Sugerencia</option>
+                <option>Felicitación</option>
+
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Elija el área relacionada con su requerimiento *</label>
+
+            <select
+            id="area"
+            name="area"
+            required>
+
+                <option value="">
+                    Seleccione
+                </option>
+
+                <option>Crédito</option>
+                <option>Cartera</option>
+                <option>Cobranza Jurídica</option>
+                <option>Afianzamiento Institucional</option>
+                <option>Atención al Cliente</option>
+                <option>Contabilidad</option>
+                <option>Otro</option>
+
+            </select>
+        </div>
+
+    </div>
+
+    <!-- MENSAJE -->
+
+    <div class="input-group textarea-group">
+
+        <label>Detalle del asunto *</label>
+
+        <textarea
+        id="mensaje"
+        name="mensaje"
+        required
+        minlength="20"
+        maxlength="2000"
+        placeholder="Describa detalladamente su solicitud">
+        </textarea>
+    </div>
+
+    <!-- ADJUNTO 
+
+<div class="upload-box">
+
+    <label class="upload-btn">
+
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+        Adjuntar soporte (PDF, JPG o PNG)
+
+       <input
+type="file"
+id="archivo"
+name="archivo"
+accept=".pdf,.jpg,.jpeg,.png"
+required>
+
+    </label>
+
+</div>
+-->
+
+   <!-- CANALES -->
+
+<h2>Canales en que podrá ser contactado para efectos de la contestación</h2>
+
+<div class="checkbox-group">
+
+    <label class="checkbox-item">
+        <input
+        type="checkbox"
+        id="contactoLlamada"
+        name="contacto"
+        value="Llamada telefónica">
+        <span>Llamada telefónica</span>
+    </label>
+
+    <label class="checkbox-item">
+        <input
+        type="checkbox"
+        id="contactoSMS"
+        name="contacto"
+        value="Mensaje de texto">
+        <span>Mensaje de texto</span>
+    </label>
+
+    <label class="checkbox-item">
+        <input
+        type="checkbox"
+        id="contactoWhatsapp"
+        name="contacto"
+        value="WhatsApp">
+        <span>WhatsApp</span>
+    </label>
+
+    <label class="checkbox-item">
+        <input
+        type="checkbox"
+        id="contactoCorreo"
+        name="contacto"
+        value="Correo electrónico">
+        <span>Correo electrónico</span>
+    </label>
+
+</div>
+
+<!-- AUTORIZACIÓN -->
+
+<div class="terms-box">
+
+    <label>
+
+        <input
+        type="checkbox"
+        id="autorizacionDatos"
+        name="autorizacionDatos"
+        required>
+
+        <span>
+            Autorizo a EasyCredit el tratamiento de mis datos
+            personales para la gestión y respuesta de esta solicitud.
+        </span>
+
+    </label>
+
+</div>
+
+<!-- INFORMACIÓN LEGAL -->
+
+<div class="legal-box">
+
+    <p>
+
+        <strong>Ley 1755 de 2015 - Artículo 14.</strong>
+
+        Salvo norma legal especial y so pena de sanción disciplinaria,
+        toda petición deberá resolverse dentro de los quince (15)
+        días hábiles siguientes a su recepción.
+
+    </p>
+
+</div>
+
+
+    <!-- BOTÓN -->
+
+<button
+type="submit"
+id="btnEnviarPQR"
+name="btnEnviarPQR"
+class="pqr-btn">
+
+    Enviar solicitud
+
+</button>
+
+</form>
 
 </section>
 
@@ -508,8 +640,8 @@ target="_blank">
 </a>
 
 <!-- JS -->
-
-<script src="../script.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="../script.js" defer></script>
 </body>
 </html>

@@ -1556,3 +1556,31 @@ body{
         gap:50px;
     }
 }
+
+
+.error{
+
+    color:#ef4444;
+    font-size:13px;
+    display:block;
+    margin-top:6px;
+}
+
+.error-input{
+
+    border:2px solid #ef4444 !important;
+}
+
+.checkbox-group{
+
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    margin-bottom:25px;
+}
+
+.checkbox-group label{
+
+    font-size:14px;
+    line-height:1.5;
+}

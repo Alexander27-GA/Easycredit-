@@ -3,10 +3,18 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto | EasyCredit</title>
 
-<title>EasyCredit</title>
+<meta name="description" content="Comuníquese con EasyCredit para recibir asesoría personalizada, resolver inquietudes y solicitar nuestros servicios.">
+
+<meta name="keywords" content="contacto EasyCredit, asesoría financiera, servicio al cliente, EasyCredit">
+
+<meta name="author" content="EasyCredit">
+
+<meta name="robots" content="index, follow">
+<meta property="og:site_name" content="EasyCredit">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
 
 <link rel="stylesheet" href="../css/contacto.css">
 
@@ -296,6 +304,7 @@ rel="stylesheet">
             id="nombre"
             placeholder="Nombre completo"
             required>
+              <small class="error"></small>
 
         </div>
 
@@ -305,15 +314,21 @@ rel="stylesheet">
             id="correo"
             placeholder="Correo electrónico"
             required>
+              <small class="error"></small>
 
         </div>
 
         <div class="input-group">
 
-            <input type="text"
-            id="telefono"
-            placeholder="Número de teléfono"
-            required>
+            <input
+    type="tel"
+    id="telefono"
+    placeholder="Número de teléfono"
+    pattern="[0-9]{10}"
+    maxlength="10"
+    required
+> 
+  <small class="error"></small>
 
         </div>
 
@@ -323,9 +338,26 @@ rel="stylesheet">
             id="mensaje"
             placeholder="Escribe tu mensaje"
             required></textarea>
+              <small class="error"></small>
 
         </div>
+        
+        <div class="checkbox-group">
 
+    <input
+        type="checkbox"
+        id="politicas"
+        required
+    >
+
+    <label for="politicas">
+
+        Acepto el tratamiento de mis datos
+        personales según la política de privacidad.
+
+    </label>
+
+</div>
         <button type="submit">
 
             Enviar mensaje
