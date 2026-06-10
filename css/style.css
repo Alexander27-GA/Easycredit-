@@ -782,31 +782,35 @@ url('../img/afianzamos.webp');
     color:var(--gray-text);
 }
 
-.beneficios-container{
-    flex-direction:column-reverse;
-    align-items:center;
-    text-align:center;
-}
+@media(max-width:768px){
 
-.beneficios-image{
-    width:100%;
-    display:flex;
-    justify-content:center;
-}
+    .beneficios-container{
+        flex-direction:column-reverse;
+        align-items:center;
+        text-align:center;
+    }
 
-.beneficios-image img{
-    width:80%;
-    max-width:320px;
-    height:auto;
-}
+    .beneficios-image{
+        width:100%;
+        display:flex;
+        justify-content:center;
+    }
 
-.beneficios-content{
-    width:100%;
-}
+    .beneficios-image img{
+        width:80%;
+        max-width:320px;
+        height:auto;
+    }
 
-.beneficios-content p{
-    max-width:100%;
-    line-height:1.8;
+    .beneficios-content{
+        width:100%;
+    }
+
+    .beneficios-content p{
+        max-width:100%;
+        line-height:1.8;
+    }
+
 }
 
 /* =========================================================
@@ -918,6 +922,26 @@ url('../img/afianzamos.webp');
     width:100%;
     border-radius:35px;
     box-shadow:0 25px 60px rgba(0,0,0,.12);
+}
+
+/* =========================================================
+   ABOUT MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+    .about-container{
+        flex-direction:column;
+    }
+
+    .about-text{
+        order:1;
+    }
+
+    .about-image{
+        order:2;
+    }
+
 }
 
 
