@@ -1,4 +1,3 @@
-
 :root{
 
     --black:#111111;
@@ -78,7 +77,7 @@ body{
 .navbar{
     width:100%;
     height:95px;
-    position:fixed;;
+    position:sticky;
     top:0;
     z-index:999;
     display:flex;
@@ -629,7 +628,7 @@ linear-gradient(
     rgba(0,0,0,.92),
     rgba(20,20,20,.92)
 ),
-url('../img/afianzamos.webp');
+url('../img/afianzamos.png');
 
     background-size:cover;
     background-position:center;
@@ -782,37 +781,6 @@ url('../img/afianzamos.webp');
     color:var(--gray-text);
 }
 
-@media(max-width:768px){
-
-    .beneficios-container{
-        flex-direction:column-reverse;
-        align-items:center;
-        text-align:center;
-    }
-
-    .beneficios-image{
-        width:100%;
-        display:flex;
-        justify-content:center;
-    }
-
-    .beneficios-image img{
-        width:80%;
-        max-width:320px;
-        height:auto;
-    }
-
-    .beneficios-content{
-        width:100%;
-    }
-
-    .beneficios-content p{
-        max-width:100%;
-        line-height:1.8;
-    }
-
-}
-
 /* =========================================================
    STATS
 ========================================================= */
@@ -866,8 +834,6 @@ url('../img/afianzamos.webp');
     margin:auto;
     line-height:1.8;
 }
-
-
 
 /* =========================================================
    ABOUT
@@ -923,27 +889,6 @@ url('../img/afianzamos.webp');
     border-radius:35px;
     box-shadow:0 25px 60px rgba(0,0,0,.12);
 }
-
-/* =========================================================
-   ABOUT MOBILE
-========================================================= */
-
-@media(max-width:768px){
-
-    .about-container{
-        flex-direction:column;
-    }
-
-    .about-text{
-        order:1;
-    }
-
-    .about-image{
-        order:2;
-    }
-
-}
-
 
 /* =========================================================
    CTA FINAL
@@ -1207,7 +1152,7 @@ url('../img/afianzamos.webp');
 }
 
 /* =========================================================
-   DROPDOWN + MENU MOBILE 
+   DROPDOWN + MENU MOBILE CORREGIDO
 ========================================================= */
 
 /* =========================================================
@@ -1691,33 +1636,4 @@ img{
         font-size:38px;
         line-height:1.2;
     }
-
-.about-container{
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
-}
-
-.about-text{
-    width:100%;
-}
-
-.about-text p{
-    width:100%;
-    max-width:100%;
-    line-height:1.8;
-}
-
-.about-image{
-    width:100%;
-    display:flex;
-    justify-content:center;
-}
-
-.about-image img{
-    width:80%;
-    max-width:320px;
-    height:auto;
-}
-
-}
+ }
