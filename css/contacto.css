@@ -479,6 +479,19 @@ body{
     0 20px 45px rgba(15,23,42,.08);
 }
 
+.contact-item div{
+    min-width:0;
+}
+
+.contact-item p{
+    word-break:break-word;
+    overflow-wrap:break-word;
+}
+
+.contact-item{
+    overflow:hidden;
+}
+
 /* =========================================================
    ICONOS
 ========================================================= */
@@ -758,7 +771,7 @@ body{
             rgba(0,0,0,.88),
             rgba(0,0,0,.68)
         ),
-        url('../img/contacto.jpg');
+        url('../img/contacto.webp');
 
         background-size:cover;
 
