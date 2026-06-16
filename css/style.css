@@ -44,8 +44,8 @@ body{
 ========================================================= */
 
 .container{
-    width:90%;
-    max-width:1280px;
+    width:85%;
+    max-width:1100px;
     margin:auto;
 }
 
@@ -621,14 +621,14 @@ section{
 ========================================================= */
 
 .afianzamos{
-    padding:140px 0;
+    padding:120px 0;
     background:
 linear-gradient(
     135deg,
     rgba(0,0,0,.92),
     rgba(20,20,20,.92)
 ),
-url('../img/afianzamos.png');
+url('../img/afianzamos.webp');
 
     background-size:cover;
     background-position:center;
@@ -703,14 +703,14 @@ url('../img/afianzamos.png');
 ========================================================= */
 
 .beneficios{
-    padding:140px 0;
+    padding:120px 0;
     background:white;
 }
 
 .beneficios-container{
     display:flex;
     align-items:center;
-    gap:90px;
+    gap:70px;
     flex-wrap:wrap;
 }
 
@@ -840,7 +840,7 @@ url('../img/afianzamos.png');
 ========================================================= */
 
 .about{
-    padding:140px 0;
+    padding:120px 0;
     background:#f5f5f5;
 }
 
@@ -895,7 +895,7 @@ url('../img/afianzamos.png');
 ========================================================= */
 
 .cta-final{
-    padding:140px 0;
+    padding:120px 0;
     background:linear-gradient(
         180deg,
         #f5f5f5 50%,
@@ -1637,3 +1637,83 @@ img{
         line-height:1.2;
     }
  }
+
+/* =========================================================
+   SITIO MÁS COMPACTO
+========================================================= */
+
+.afianzamiento,
+.afianzamos,
+.beneficios,
+.about,
+.cta-final{
+    padding:60px 0 !important;
+}
+
+/* TITULOS */
+
+.hero h1{
+    font-size:54px !important;
+}
+
+.af-title h2,
+.afianzamos h2,
+.beneficios-content h2,
+.about-text h2,
+.cta-content h2,
+.stats-title h2{
+    font-size:40px !important;
+}
+
+/* TEXTOS */
+
+.hero p,
+.about-text p,
+.beneficios-content p,
+.af-card p,
+.afianza-item p,
+.beneficio-item p{
+    font-size:15px !important;
+}
+
+/* IMAGENES */
+
+.about-image img,
+.beneficios-image img{
+    width:85% !important;
+    max-width:450px !important;
+}
+
+.cta-image img{
+    max-height:500px;
+    object-fit:cover;
+}
+
+/* TARJETAS */
+
+.af-card,
+.afianza-item,
+.beneficio-item{
+    padding:22px !important;
+}
+
+/* NAVBAR */
+
+.navbar{
+    height:80px !important;
+}
+
+.logo img{
+    height:55px !important;
+}
+
+/* ESTADISTICAS */
+
+.stats{
+    width:80% !important;
+    padding:45px 25px !important;
+}
+
+.stat h2{
+    font-size:50px !important;
+}

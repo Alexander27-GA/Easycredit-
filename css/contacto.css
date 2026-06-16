@@ -673,6 +673,15 @@ body{
     transition:.3s ease;
 }
 
+.contact-form select{
+    width:100%;
+    padding:16px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+    font-family:'Poppins',sans-serif;
+}
+
 /* PLACEHOLDER */
 
 .contact-form input::placeholder,
@@ -702,6 +711,8 @@ body{
     box-shadow:
     0 0 0 4px rgba(30,142,28,.10);
 }
+
+
 
 /* =========================================================
    BOTON
@@ -752,6 +763,8 @@ body{
 
     transform:scale(.98);
 }
+
+
 
 /* =========================================================
    RESPONSIVE

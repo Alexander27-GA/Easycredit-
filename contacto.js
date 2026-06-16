@@ -11,6 +11,10 @@ form.addEventListener('submit',(e)=>{
 
     e.preventDefault();
 
+    labelNombre.textContent = "NIT";
+
+    const tipoPersona = document.getElementById("tipoPersona").value;
+    
     const nombre =
     document.getElementById('nombre').value;
 
@@ -23,11 +27,17 @@ form.addEventListener('submit',(e)=>{
     const mensaje =
     document.getElementById('mensaje').value;
 
+    
+
     const texto =
+
+
 
 `Hola EasyCredit.
 
-Nombre: ${nombre}
+Tipo de Persona: ${tipoPersona}
+
+Nombre / NIT: ${nombre}
 
 Correo: ${correo}
 
@@ -50,3 +60,23 @@ ${mensaje}`;
 });
 
 }
+
+const tipoPersona = document.getElementById("tipoPersona");
+const nombreInput = document.getElementById("nombre");
+const labelNombre = document.getElementById("labelNombre");
+
+tipoPersona.addEventListener("change", () => {
+
+    if (tipoPersona.value === "juridica") {
+
+        labelNombre.textContent = "NIT";
+        nombreInput.placeholder = "Ingrese el NIT";
+
+    } else {
+
+        labelNombre.textContent = "Nombre completo";
+        nombreInput.placeholder = "Ingrese su nombre completo";
+
+    }
+
+});
