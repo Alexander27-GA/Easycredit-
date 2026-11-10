@@ -265,7 +265,18 @@ dots[index].classList.add('active');
        AUTO PLAY
     ===================================================== */
 
-    setInterval(nextSlide,9000);
+    const reduceMotion =
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if(!reduceMotion){
+
+        setInterval(() => {
+
+            if(!document.hidden) nextSlide();
+
+        },9000);
+
+    }
 
 
 
@@ -457,11 +468,51 @@ document.querySelector(".menu");
 
 if(toggle && menu){
 
+    const setMenu = (open) => {
+
+        menu.classList.toggle("active", open);
+
+        toggle.setAttribute("aria-expanded", String(open));
+
+        toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+
+    };
+
     toggle.addEventListener("click", () => {
 
-        menu.classList.toggle("active");
+        setMenu(!menu.classList.contains("active"));
 
     });
+
+    /* CERRAR CON ESCAPE */
+
+    document.addEventListener("keydown", (e) => {
+
+        if(e.key === "Escape" && menu.classList.contains("active")){
+
+            setMenu(false);
+
+            toggle.focus();
+
+        }
+
+    });
+
+}
+
+function closeMenu(){
+
+    if(!menu) return;
+
+    menu.classList.remove("active");
+
+    if(toggle){
+
+        toggle.setAttribute("aria-expanded", "false");
+
+        toggle.setAttribute("aria-label", "Abrir menú");
+
+    }
 
 }
 
@@ -502,7 +553,7 @@ submenuLinks.forEach(link => {
 
     link.addEventListener("click", () => {
 
-        menu.classList.remove("active");
+        closeMenu();
 
     });
 
@@ -517,7 +568,7 @@ normalLinks.forEach(link => {
 
     link.addEventListener("click", () => {
 
-        menu.classList.remove("active");
+        closeMenu();
 
     });
 
@@ -527,3 +578,100 @@ normalLinks.forEach(link => {
 
 
 
+
+
+/* =========================================================
+   REDISEÑO: sombra del navbar al hacer scroll + animación
+   de entrada de secciones (se desactiva sin JS / reduced motion)
+========================================================= */
+
+(function(){
+
+    const navbar = document.querySelector(".navbar");
+
+    if(navbar){
+
+        const onScroll = () => {
+            navbar.classList.toggle("is-scrolled", window.scrollY > 20);
+        };
+
+        onScroll();
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+
+    }
+
+    const reduce =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if(reduce) return;
+
+    const selectores = [
+        ".af-card", ".service-card", ".mvv-card", ".valor-item",
+        ".future-item", ".afianza-item", ".service-item", ".contact-item",
+        ".cta-item", ".beneficios-container", ".about-container",
+        ".cta-box", ".af-title", ".services-title", ".valores-header",
+        ".mvv-title", ".contact-form-box", ".pqr-box", ".service-info"
+    ];
+
+    let pendientes = Array.from(document.querySelectorAll(selectores.join(",")));
+
+    pendientes.forEach((el, i) => {
+
+        el.classList.add("ec-reveal");
+
+        el.style.setProperty("--ec-delay", ((i % 4) * 0.08) + "s");
+
+    });
+
+    /* Muestra todo lo que ya entró (o quedó por encima) del viewport */
+
+    const revisar = () => {
+
+        const limite = window.innerHeight * 0.92;
+
+        pendientes = pendientes.filter(el => {
+
+            if(el.getBoundingClientRect().top < limite){
+
+                el.classList.add("is-visible");
+
+                return false;
+
+            }
+
+            return true;
+
+        });
+
+        if(pendientes.length === 0){
+
+            window.removeEventListener("scroll", revisar);
+            window.removeEventListener("resize", revisar);
+
+        }
+
+    };
+
+    window.addEventListener("scroll", revisar, { passive: true });
+    window.addEventListener("resize", revisar);
+
+    revisar();
+
+    /* Red de seguridad: nada debe quedar oculto si algo falla */
+
+    setTimeout(() => {
+
+        pendientes.forEach(el => {
+
+            if(el.getBoundingClientRect().top < window.innerHeight * 1.5){
+
+                el.classList.add("is-visible");
+
+            }
+
+        });
+
+    }, 3000);
+
+})();

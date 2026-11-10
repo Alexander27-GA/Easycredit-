@@ -35,7 +35,7 @@
 
     <meta property="og:locale" content="es_CO">
 
-    <meta property="og:image" content="https://easycreditcoop.com/img/logo.png">
+    <meta property="og:image" content="https://easycreditcoop.com/img/logo.webp">
 
     <!-- TWITTER -->
 
@@ -45,7 +45,7 @@
 
     <meta name="twitter:description" content="Afianzamiento institucional, gestión de cartera y soluciones financieras.">
 
-    <meta name="twitter:image" content="https://easycreditcoop.com/img/logo.png">
+    <meta name="twitter:image" content="https://easycreditcoop.com/img/logo.webp">
 
     <!-- CSS -->
 
@@ -67,6 +67,9 @@
 
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+<link rel="stylesheet" href="./css/mejoras.css">
 
 </head>
 
@@ -98,11 +101,9 @@
 
 <header class="navbar">
 
-    <div class="menu-toggle">
-
-        <i class="fa-solid fa-bars"></i>
-
-    </div>
+    <button type="button" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+<i class="fa-solid fa-bars" aria-hidden="true"></i>
+</button>
 
     <!-- LOGO -->
 
@@ -116,7 +117,7 @@
 
     <!-- MENU -->
 
-<nav class="menu">
+<nav class="menu" id="menu-principal" aria-label="Navegación principal">
 
     <!-- INICIO -->
 
@@ -146,7 +147,7 @@
             </a>
 
             <a href="./html/cobranza.html">
-                cobranza jurídica
+                Cobranza jurídica
             </a>
 
             <a href="./html/afianzamiento.html">
@@ -454,7 +455,7 @@
 
             <div class="beneficios-image">
 
-                <img src="./img/beneficios.webp"
+                <img loading="lazy" decoding="async" src="./img/beneficios.webp"
                 alt="Beneficios">
 
             </div>
@@ -530,7 +531,7 @@
 
             <div class="about-image">
 
-                <img src="./img/modelo.webp"
+                <img loading="lazy" decoding="async" src="./img/modelo.webp"
                 alt="Nosotros">
 
             </div>
@@ -551,7 +552,7 @@
 
             <div class="cta-image">
 
-                <img src="./img/equipo.webp"
+                <img loading="lazy" decoding="async" src="./img/equipo.webp"
                 alt="Equipo EasyCredit">
 
                 <div class="cta-image-overlay"></div>
@@ -681,7 +682,7 @@
 
             <div class="footer-brand">
 
-                <img src="./img/logo.webp"
+                <img loading="lazy" decoding="async" src="./img/logo.webp"
                 alt="EasyCredit">
 
                 <p>
@@ -749,16 +750,16 @@ Ver ubicación en Google Maps
 
                 <div class="social-icons">
 
-                    <a href="#">
-                        <i class="fa-brands fa-facebook-f"></i>
+                    <a href="#" aria-label="Facebook de EasyCredit">
+<i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                     </a>
 
-                    <a href="https://www.instagram.com/easycreditcoop/">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.instagram.com/easycreditcoop/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de EasyCredit">
+<i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/gerencia-easycredit-982b2041b/">
-                        <i class="fa-brands fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/gerencia-easycredit-982b2041b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de EasyCredit">
+<i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     </a>
 
                 </div>
@@ -780,12 +781,8 @@ Ver ubicación en Google Maps
 
 <!-- WHATSAPP -->
 
-<a href="https://wa.me/573245231142?text=Hola%20EasyCredit,%20quiero%20más%20información"
-class="whatsapp"
-target="_blank">
-
-    <i class="fa-brands fa-whatsapp"></i>
-
+<a href="https://wa.me/573245231142?text=Hola%20EasyCredit,%20quiero%20asesor%C3%ADa" class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
 </a>
 
 <!-- JS -->

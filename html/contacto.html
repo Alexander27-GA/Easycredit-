@@ -3,6 +3,8 @@
 
 <head>
 
+<meta charset="UTF-8">
+
 <title>Contacto | EasyCredit</title>
 
 <meta name="description" content="Comuníquese con EasyCredit para recibir asesoría personalizada, resolver inquietudes y solicitar nuestros servicios.">
@@ -12,6 +14,12 @@
 <meta name="author" content="EasyCredit">
 
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://easycreditcoop.com/html/contacto">
+<meta property="og:title" content="Contacto | EasyCredit">
+<meta property="og:description" content="Comuníquese con EasyCredit para recibir asesoría personalizada, resolver inquietudes y solicitar nuestros servicios.">
+<meta property="og:url" content="https://easycreditcoop.com/html/contacto">
+<meta property="og:image" content="https://easycreditcoop.com/img/logo.webp">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:site_name" content="EasyCredit">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
@@ -37,6 +45,9 @@ crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet">
 
+
+<link rel="stylesheet" href="../css/mejoras.css">
+
 </head>
 
 <body>
@@ -61,11 +72,9 @@ rel="stylesheet">
 
 <header class="navbar">
 
-    <div class="menu-toggle">
-
-    <i class="fa-solid fa-bars"></i>
-
-</div>
+    <button type="button" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+<i class="fa-solid fa-bars" aria-hidden="true"></i>
+</button>
 
     <a href="../index.html" class="logo">
 
@@ -76,7 +85,7 @@ rel="stylesheet">
 
        <!-- MENU -->
 
-<nav class="menu">
+<nav class="menu" id="menu-principal" aria-label="Navegación principal">
 
     <!-- INICIO -->
 
@@ -106,7 +115,7 @@ rel="stylesheet">
             </a>
 
             <a href="./cobranza.html">
-                cobranza jurídica
+                Cobranza jurídica
             </a>
 
             <a href="./afianzamiento.html">
@@ -145,7 +154,7 @@ rel="stylesheet">
 
     
 
-    <a href="#" class="btn-nav">
+    <a href="./contacto.html" class="btn-nav">
 
         Solicitar Afiliacion
 
@@ -282,20 +291,20 @@ Ver ubicación en Google Maps
 
                 <div class="contact-social">
 
-                    <a href="#">
-                        <i class="fa-brands fa-facebook-f"></i>
+                    <a href="#" aria-label="Facebook de EasyCredit">
+<i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                     </a>
 
-                    <a href="#">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.instagram.com/easycreditcoop/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de EasyCredit">
+<i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
 
-                    <a href="#">
-                        <i class="fa-brands fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/gerencia-easycredit-982b2041b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de EasyCredit">
+<i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     </a>
 
-                    <a href="#">
-                        <i class="fa-brands fa-whatsapp"></i>
+                    <a href="https://wa.me/573245231142" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de EasyCredit">
+<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                     </a>
 
                 </div>
@@ -315,7 +324,7 @@ Ver ubicación en Google Maps
 
         <div class="input-group">
 
-    <select id="tipoPersona" required>
+    <select id="tipoPersona" aria-label="Tipo de persona" required>
 
         <option value="">Seleccione tipo de persona</option>
         <option value="natural">Persona Natural</option>
@@ -329,7 +338,7 @@ Ver ubicación en Google Maps
 
        <div class="input-group">
 
-    <label id="labelNombre">Nombre completo</label>
+    <label id="labelNombre" for="nombre">Nombre completo</label>
 
     <input
         type="text"
@@ -346,6 +355,7 @@ Ver ubicación en Google Maps
 
             <input type="email"
             id="correo"
+            aria-label="Correo electrónico"
             placeholder="Correo electrónico"
             required>
               <small class="error"></small>
@@ -357,6 +367,9 @@ Ver ubicación en Google Maps
             <input
     type="tel"
     id="telefono"
+    aria-label="Número de teléfono"
+    inputmode="numeric"
+    autocomplete="tel"
     placeholder="Número de teléfono"
     pattern="[0-9]{10}"
     maxlength="10"
@@ -370,6 +383,7 @@ Ver ubicación en Google Maps
 
             <textarea
             id="mensaje"
+            aria-label="Mensaje"
             placeholder="Escribe tu mensaje"
             required></textarea>
               <small class="error"></small>
@@ -418,7 +432,7 @@ Ver ubicación en Google Maps
 
             <div class="footer-brand">
 
-              <img src="../img/logo.webp"
+              <img loading="lazy" decoding="async" src="../img/logo.webp"
               alt="EasyCredit">
 
                 <p>
@@ -481,16 +495,16 @@ Ver ubicación en Google Maps
 
                 <div class="social-icons">
 
-                    <a href="#">
-                        <i class="fa-brands fa-facebook-f"></i>
+                    <a href="#" aria-label="Facebook de EasyCredit">
+<i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                     </a>
 
-                    <a href="https://www.instagram.com/easycreditcoop/">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.instagram.com/easycreditcoop/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de EasyCredit">
+<i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/gerencia-easycredit-982b2041b/">
-                        <i class="fa-brands fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/gerencia-easycredit-982b2041b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de EasyCredit">
+<i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     </a>
 
                 </div>
@@ -515,14 +529,9 @@ Ver ubicación en Google Maps
      WHATSAPP
 ========================================================= -->
 
- <a href="https://wa.me/573245231142?text=Hola%20EasyCredit,%20quiero%20asesoría"
-class="whatsapp"
-target="_blank">
-
-    <i class="fa-brands fa-whatsapp"></i>
-
+ <a href="https://wa.me/573245231142?text=Hola%20EasyCredit,%20quiero%20asesor%C3%ADa" class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
 </a>
-
 
 <script src="../script.js"></script>
 <script src="../contacto.js"></script>

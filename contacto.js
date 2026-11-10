@@ -1,82 +1,69 @@
 /* =========================================================
-   FORMULARIO WHATSAPP
+   FORMULARIO CONTACTO -> WHATSAPP
 ========================================================= */
 
-const form =
-document.getElementById('whatsappForm');
+const form = document.getElementById('whatsappForm');
 
-if(form){
+if (form) {
 
-form.addEventListener('submit',(e)=>{
+    const tipoPersona = document.getElementById('tipoPersona');
+    const nombreInput = document.getElementById('nombre');
+    const labelNombre = document.getElementById('labelNombre');
 
-    e.preventDefault();
+    /* Cambia etiqueta y placeholder según el tipo de persona */
 
-    labelNombre.textContent = "NIT";
+    if (tipoPersona && nombreInput && labelNombre) {
 
-    const tipoPersona = document.getElementById("tipoPersona").value;
-    
-    const nombre =
-    document.getElementById('nombre').value;
+        tipoPersona.addEventListener('change', () => {
 
-    const correo =
-    document.getElementById('correo').value;
+            if (tipoPersona.value === 'juridica') {
 
-    const telefono =
-    document.getElementById('telefono').value;
+                labelNombre.textContent = 'NIT';
+                nombreInput.placeholder = 'Ingrese el NIT';
 
-    const mensaje =
-    document.getElementById('mensaje').value;
+            } else {
 
-    
+                labelNombre.textContent = 'Nombre completo';
+                nombreInput.placeholder = 'Ingrese su nombre completo';
 
-    const texto =
+            }
 
-
-
-`Hola EasyCredit.
-
-Tipo de Persona: ${tipoPersona}
-
-Nombre / NIT: ${nombre}
-
-Correo: ${correo}
-
-Teléfono: ${telefono}
-
-Mensaje:
-${mensaje}`;
-
-    const numero =
-    '573245231142';
-
-    const url =
-    `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
-
-    window.open(
-        url,
-        '_blank'
-    );
-
-});
-
-}
-
-const tipoPersona = document.getElementById("tipoPersona");
-const nombreInput = document.getElementById("nombre");
-const labelNombre = document.getElementById("labelNombre");
-
-tipoPersona.addEventListener("change", () => {
-
-    if (tipoPersona.value === "juridica") {
-
-        labelNombre.textContent = "NIT";
-        nombreInput.placeholder = "Ingrese el NIT";
-
-    } else {
-
-        labelNombre.textContent = "Nombre completo";
-        nombreInput.placeholder = "Ingrese su nombre completo";
+        });
 
     }
 
-});
+    /* Envío: abre WhatsApp con el mensaje armado */
+
+    form.addEventListener('submit', (e) => {
+
+        e.preventDefault();
+
+        const valor = (id) => document.getElementById(id).value.trim();
+
+        const etiquetaNombre = tipoPersona.value === 'juridica'
+            ? 'NIT'
+            : 'Nombre';
+
+        const texto =
+`Hola EasyCredit.
+
+Tipo de Persona: ${tipoPersona.value}
+
+${etiquetaNombre}: ${valor('nombre')}
+
+Correo: ${valor('correo')}
+
+Teléfono: ${valor('telefono')}
+
+Mensaje:
+${valor('mensaje')}`;
+
+        const numero = '573245231142';
+
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+        window.open(url, '_blank', 'noopener');
+
+    });
+
+}

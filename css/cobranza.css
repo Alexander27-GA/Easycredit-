@@ -429,7 +429,7 @@ body{
 .service-list{
     display:grid;
     grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
+    repeat(auto-fit,minmax(min(300px,100%),1fr));
     gap:25px;
 }
 
@@ -550,7 +550,7 @@ body{
 .footer-container{
     display:grid;
     grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
+    repeat(auto-fit,minmax(min(220px,100%),1fr));
     gap:50px;
 }
 
@@ -1008,4 +1008,103 @@ body{
 
         gap:50px;
     }
+}
+
+/* =========================================================
+   MEJORAS UI/UX + ACCESIBILIDAD (bloque compartido)
+   Mantiene la paleta corporativa (#1E8E1C / #39D10A)
+========================================================= */
+
+html{
+    scroll-behavior:smooth;
+}
+
+img{
+    max-width:100%;
+}
+
+/* Hamburguesa ahora es <button>: se anula el estilo nativo */
+
+button.menu-toggle{
+    background:none;
+    border:0;
+    padding:0;
+    line-height:1;
+    font-family:inherit;
+}
+
+/* Foco visible para navegación con teclado */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible{
+    outline:3px solid #39D10A;
+    outline-offset:3px;
+    border-radius:6px;
+}
+
+/* Transiciones sutiles en interactivos */
+
+a,
+button{
+    transition:color .25s ease, background-color .25s ease,
+               transform .25s ease, box-shadow .25s ease;
+}
+
+.btn-nav:hover,
+.whatsapp:hover{
+    transform:translateY(-2px);
+}
+
+.btn-nav:active,
+.whatsapp:active{
+    transform:translateY(0);
+}
+
+/* Áreas táctiles mínimas en móvil */
+
+@media(max-width:768px){
+
+    .menu a,
+    .submenu a,
+    .btn-nav,
+    .social-icons a,
+    .contact-social a{
+        min-height:44px;
+    }
+
+}
+
+/* Respeta usuarios que reducen animaciones */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+        scroll-behavior:auto !important;
+    }
+
+}
+
+/* Hero fluido: evita desbordamiento horizontal en móvil */
+
+.services-hero-content{
+    box-sizing:border-box;
+    max-width:min(850px,100%);
+}
+
+.services-hero-content h1{
+    font-size:clamp(34px,9vw,70px);
+    overflow-wrap:anywhere;
+}
+
+.services-hero-content p{
+    font-size:clamp(16px,4.2vw,20px);
 }

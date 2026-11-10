@@ -3,6 +3,8 @@
 
 <head>
 
+<meta charset="UTF-8">
+
 <title>Servicios | EasyCredit</title>
 
 <meta name="description" content="Descubra los servicios de afianzamiento institucional, cobranza jurídica y asesoría integral ofrecidos por EasyCredit.">
@@ -12,6 +14,12 @@
 <meta name="author" content="EasyCredit">
 
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://easycreditcoop.com/html/servicios">
+<meta property="og:title" content="Servicios | EasyCredit">
+<meta property="og:description" content="Descubra los servicios de afianzamiento institucional, cobranza jurídica y asesoría integral ofrecidos por EasyCredit.">
+<meta property="og:url" content="https://easycreditcoop.com/html/servicios">
+<meta property="og:image" content="https://easycreditcoop.com/img/logo.webp">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:site_name" content="EasyCredit">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
@@ -36,6 +44,9 @@ crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 rel="stylesheet">
+
+
+<link rel="stylesheet" href="../css/mejoras.css">
 
 </head>
 
@@ -65,11 +76,9 @@ rel="stylesheet">
 
 <header class="navbar">
 
-     <div class="menu-toggle">
-
-      <i class="fa-solid fa-bars"></i>
-
-     </div>
+     <button type="button" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">
+<i class="fa-solid fa-bars" aria-hidden="true"></i>
+</button>
 
 
     <a href="../index.html" class="logo">
@@ -81,7 +90,7 @@ rel="stylesheet">
 
         <!-- MENU -->
 
-<nav class="menu">
+<nav class="menu" id="menu-principal" aria-label="Navegación principal">
 
     <!-- INICIO -->
 
@@ -111,7 +120,7 @@ rel="stylesheet">
             </a>
 
             <a href="./cobranza.html">
-                cobranza jurídica
+                Cobranza jurídica
             </a>
 
             <a href="./afianzamiento.html">
@@ -150,7 +159,7 @@ rel="stylesheet">
 
    
 
-    <a href="#"
+    <a href="./contacto.html"
     class="btn-nav">
 
         Solicitar Afiliacion
@@ -435,7 +444,7 @@ rel="stylesheet">
 
             <div class="footer-brand">
 
-                <img src="../img/logo.webp"
+                <img loading="lazy" decoding="async" src="../img/logo.webp"
                 alt="EasyCredit">
 
                 <p>
@@ -498,16 +507,16 @@ Ver ubicación en Google Maps
 
                 <div class="social-icons">
 
-                    <a href="#">
-                        <i class="fa-brands fa-facebook-f"></i>
+                    <a href="#" aria-label="Facebook de EasyCredit">
+<i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                     </a>
 
-                    <a href="ttps://www.instagram.com/easycreditcoop/">
-                        <i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.instagram.com/easycreditcoop/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de EasyCredit">
+<i class="fa-brands fa-instagram" aria-hidden="true"></i>
                     </a>
 
-                    <a href="ttps://www.linkedin.com/in/gerencia-easycredit-982b2041b/">
-                        <i class="fa-brands fa-linkedin-in"></i>
+                    <a href="https://www.linkedin.com/in/gerencia-easycredit-982b2041b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de EasyCredit">
+<i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
                     </a>
 
                 </div>
@@ -532,12 +541,8 @@ Ver ubicación en Google Maps
      WHATSAPP
 ========================================================= -->
 
- <a href="https://wa.me/573245231142?text=Hola%20EasyCredit,%20quiero%20asesoría"
-class="whatsapp"
-target="_blank">
-
-    <i class="fa-brands fa-whatsapp"></i>
-
+ <a href="https://wa.me/573245231142?text=Hola%20EasyCredit,%20quiero%20asesor%C3%ADa" class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
 </a>
 
 <script src="../script.js"></script>
